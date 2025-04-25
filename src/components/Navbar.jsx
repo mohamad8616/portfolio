@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import NavLinks from "./NavLinks";
-
-const hambergerMenuLine = "block h-1 w-full bg-black rounded bg-white";
+import { motion, stagger } from "framer-motion";
+const hambergerMenuLine = "block h-1 w-full bg-black rounded";
 
 const links = [
   { title: "Home", href: "/" },
@@ -12,6 +12,58 @@ const links = [
   { title: "Portfolio", href: "/portfolio" },
   { title: "Contact", href: "/contact" },
 ];
+
+const topVariants = {
+  closed: {
+    rotate: 0,
+  },
+  opened: {
+    rotate: 45,
+    backgroundColor: "rgb(255, 255, 255)",
+  },
+};
+
+const centerVariants = {
+  closed: {
+    rotate: 1,
+  },
+  opened: {
+    rotate: 0,
+  },
+};
+const bottomVariants = {
+  closed: {
+    rotate: 0,
+  },
+  opened: {
+    rotate: -45,
+    backgroundColor: "rgb(255, 255, 255)",
+  },
+};
+
+const listVariants = {
+  closed: {
+    x: "100vw",
+  },
+  opened: {
+    x: 0,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const listItemsVariant = {
+  closed: {
+    x: -10,
+    opacity: 0,
+  },
+  opened: {
+    x: 0,
+    opacity: 1,
+  },
+};
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -23,7 +75,7 @@ function Navbar() {
           <NavLinks key={link.title} link={link} />
         ))}
       </div>
-      <div className="w-1/3 justify-center md:hidden lg:flex">
+      <div className="justify-center md:hidden lg:flex xl:w-1/3">
         {/* {LOGO} */}
         <Link
           href="/"
@@ -58,23 +110,36 @@ function Navbar() {
           className="relative z-50 flex h-8 w-10 flex-col justify-between"
           onClick={() => setOpen(!open)}
         >
-          <span className={hambergerMenuLine}></span>
-          <span className={hambergerMenuLine}></span>
-          <span className={hambergerMenuLine}></span>
+          <motion.span
+            variants={topVariants}
+            className={`${hambergerMenuLine} origin-left`}
+            animate={open ? "opened" : "closed"}
+          ></motion.span>
+          <motion.span
+            variants={centerVariants}
+            className={hambergerMenuLine}
+            animate={open ? "opened" : "closed"}
+          ></motion.span>
+          <motion.span
+            variants={bottomVariants}
+            className={`${hambergerMenuLine} origin-left`}
+            animate={open ? "opened" : "closed"}
+          ></motion.span>
         </button>
         {/* MENU ITEMS */}
         {open && (
-          <div className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-8 bg-black text-4xl text-white">
+          <motion.div
+            variants={listVariants}
+            initial="closed"
+            animate="opened"
+            className="absolute left-0 top-0 z-40 flex h-screen w-screen flex-col items-center justify-center gap-8 bg-black text-4xl text-white"
+          >
             {links.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className="hover:underline"
-              >
-                {link.title}
-              </Link>
+              <motion.div variants={listItemsVariant} key={link.title}>
+                <Link href={link.href}>{link.title}</Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
