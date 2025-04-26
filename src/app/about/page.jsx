@@ -1,263 +1,352 @@
 "use client";
-import { motion } from "framer-motion";
-function About() {
+import Brain from "@/components/brain";
+import { motion, useInView, useScroll } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
+
+const AboutPage = () => {
+  const containerRef = useRef();
+
+  const { scrollYProgress } = useScroll({ container: containerRef });
+
+  const skillRef = useRef();
+  // const isSkillRefInView = useInView(skillRef, {once:true});
+  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+
+  const experienceRef = useRef();
+  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
+
   return (
     <motion.div
+      className="h-full"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
       {/* CONTAINER */}
-      <div className="h-full overflow-scroll lg:flex">
-        {/* TEXT CONTAINER */}
-        <div className="flex flex-col gap-28 px-4 sm:px-8 md:gap-32 md:px-12 lg:w-2/3 lg:gap-48 lg:px-20 lg:pr-0 xl:gap-64 xl:px-24">
-          {/* BIOGRAPHY CONTAINER */}
-          <div className="flex flex-col justify-center gap-12">
-            {/* heading */}
-            <h1 className="text-2xl font-bold">BIOGRAPHY</h1>
-            {/* desc */}
-            <p className="italic">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
-              eum nemo non accusamus iure recusandae maiores ab a. Ex quis enim
-              nisi laborum saepe deleniti, ea modi pariatur porro dolores soluta
-              sequi exercitationem doloremque necessitatibus ad, adipisci
-              nesciunt nulla iste!
-            </p>
-            {/* quots */}
-            <br />
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            {/* signature */}
-            <div className="self-end">
-              <svg
-                width="175"
-                height="100"
-                viewBox="0 0 1025 459"
+      <div className="relative h-screen w-full overflow-hidden">
+        {" "}
+        {/* Changed container */}
+        <div
+          className="h-full w-full overflow-y-auto lg:flex"
+          ref={containerRef}
+        >
+          {/* TEXT CONTAINER */}
+          <div className="flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-48 lg:p-20 lg:pr-0 xl:w-1/2 xl:gap-64 xl:p-48">
+            {/* BIOGRAPHY CONTAINER */}
+            <div className="flex flex-col justify-center gap-12">
+              {/* BIOGRAPHY IMAGE */}
+              <Image
+                src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt=""
+                width={112}
+                height={112}
+                className="h-28 w-28 rounded-full object-cover"
+              />
+              {/* BIOGRAPHY TITLE */}
+              <h1 className="text-2xl font-bold">BIOGRAPHY</h1>
+              {/* BIOGRAPHY DESC */}
+              <p className="text-lg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                harum quibusdam cupiditate nobis accusamus sed aut aperiam,
+                reiciendis numquam! Voluptas voluptatibus obcaecati dolore
+                itaque suscipit! Vel doloremque numquam quam nihil.
+              </p>
+              {/* BIOGRAPHY QUOTE */}
+              <span className="italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+              {/* BIOGRAPHY SIGN SVG*/}
+              <div className="self-end">
+                <svg
+                  width="185"
+                  height="77"
+                  viewBox="0 0 370 114"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M66 2C66 29.4851 68.6687 64.5118 49.3333 87.4444C42.4997 95.5495 35.7683 97.6796 26.2222 101C20.002 103.164 8.87322 103.873 4 99C-0.260934 94.7391 2.94804 88.1756 8.22222 86.2222C13.7053 84.1915 17.942 84 23.7778 84C33.359 84 41.3193 83.5602 50.2222 87C56.6125 89.469 63.5773 91.9131 69.5555 95.5C75.4778 99.0533 87.1838 104.357 93.5 99.4444C96.1292 97.3995 96.2752 92.5118 96.9444 89.5C97.9646 84.9092 92.6432 83.2024 89 83C84.472 82.7484 82.3397 81.8856 82 88C81.8025 91.5554 83.5627 94.4193 86 97C88.9648 100.139 92.0717 100.96 96 98.7778C99.3106 96.9386 98 90.7299 98 87.5C98 85.0327 98.4365 83.1348 99.2222 80.7778C100.357 77.3743 99.2311 78.4486 101.5 77.9444C105.352 77.0886 108 76.4766 108 81.5C108 85.6646 109 89.3473 109 93.5C109 100.142 108.863 95.0454 110.5 91.4444C112.765 86.4616 116.631 81.205 121.5 78.5C127.057 75.4129 126 82.1509 126 85.5C126 92.5532 124.42 102 134 102C142.932 102 153 102.569 153 91.2222C153 87.1735 153.772 81.3206 148 81C141.934 80.663 142.107 81.8068 139.5 86.5C134.378 95.7204 137.972 105 149.5 105C153.589 105 153.996 99.8977 155.5 96.8889C157.902 92.0843 161 85.4067 161 80C161 74.0547 158.407 82.7413 157.222 84.2222C155.194 86.7574 155 92.5718 155 95.7778C155 99.9302 153.8 104.999 158 107.222C161.954 109.316 164.884 106.382 167.778 103.778C171.15 100.743 175.896 99.1107 180 97C186.143 93.8409 191.659 91.4099 198.222 89.2222C206.505 86.4614 214.839 87 223.5 87C230.613 87 231.628 104 222.5 104C216.954 104 199.251 107.814 207 95.2222C211.456 87.9805 214.484 80.6007 220 73.7778C229.781 61.6805 242.696 50.8197 256.222 43C264.769 38.0591 274.192 34.6264 283 30.2222C286.55 28.4473 280.07 32.3343 278.5 33.5556C271.707 38.8391 266.609 45.3914 260.556 51.4444C255.356 56.6444 250.682 61.459 246.5 67.5C242.917 72.6757 239.364 77.3825 236.556 83C233.829 88.4524 231.82 94.3142 228.556 99.4444C226.693 102.371 225.518 107.823 222.5 109.5C214.795 113.78 217.517 100.438 218.056 95.0556C218.678 88.8318 227.982 85.7572 233.056 88.6111C239.614 92.3003 245.506 97.7883 252 101.778C254.886 103.551 259.46 107 263 107C271.267 107 273.32 81.9392 268.778 77.2222C264.112 72.3774 261.206 80.5039 261 84C260.576 91.2135 257.836 96.9269 264.778 102C272.242 107.454 285.041 112.276 292.111 104.833C298.002 98.6323 304.301 90.8902 308.556 83.4444C310.355 80.295 310.132 84.6251 309.444 86C305.387 94.1158 303 102.264 303 111.5C303 116.021 337.534 99.1863 340.5 98C347.33 95.2679 355.47 93.8299 361.778 90C363.935 88.6902 365.473 88 368 88"
+                    stroke="black"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+              {/* BIOGRAPHY SCROLL SVG */}
+              <motion.svg
+                initial={{ opacity: 0.2, y: 0 }}
+                animate={{ opacity: 1, y: "10px" }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                }}
+                viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                width={50}
+                height={50}
               >
-                <rect width="175" height="100" fill="" />
                 <path
-                  d="M524 192C495.931 186.018 468.782 174.466 443.778 160.556C401.705 137.15 359.311 101.546 341.444 55.2778C329.608 24.6254 354.2 8.78164 380.556 3.22222C385.922 2.09032 392.901 0.899371 398.222 2.88889C413.282 8.51977 410.927 27.6563 406.556 39.4444C394.286 72.5277 353.651 95.3668 353.444 132.889C353.237 170.661 414.954 134.071 428.111 126.667C460.552 108.411 493.487 92.7402 528.667 80.4444C550.876 72.682 573.903 66.2724 595.333 56.4444C598.996 54.7647 606.519 52.5843 609 49C611.56 45.3022 601.072 53.2772 597.333 55.7778C542.557 92.4186 488.871 131.005 435.556 169.722C324.923 250.064 221.068 338.621 114 423.5C99.5573 434.95 84.3788 445.497 70 457"
-                  stroke="darkBlue"
-                  stroke-width="10"
-                  stroke-linecap="round"
-                />
+                  d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
+                  stroke="#000000"
+                  strokeWidth="1"
+                ></path>
+                <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
                 <path
-                  d="M535.206 433.606C457.773 431.923 380.851 420.173 305.016 404.967C225.257 388.975 145.808 367.221 73.142 329.882C49.2189 317.589 25.931 303.6 8.52522 282.713C6.86933 280.726 2.38843 271.202 2.38843 276.697C2.38843 294.243 3.81629 314.11 16.3466 327.476C36.0503 348.493 59.4591 353.467 87.8221 353.467C197.1 353.467 304.424 348.085 412.952 333.251C580.399 310.364 746.099 288.489 915.326 288.489C951.064 288.489 986.801 288.489 1022.54 288.489"
-                  stroke="darkBlue"
-                  stroke-width="10"
-                  stroke-linecap="round"
-                />
-              </svg>
+                  d="M15 11L12 14L9 11"
+                  stroke="#000000"
+                  strokeWidth="1"
+                ></path>
+              </motion.svg>
             </div>
-          </div>
-          {/* scroll svg */}
-          <div>
-            <svg
-              width="40"
-              height="40"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
+            {/* SKILLS CONTAINER */}
+            <div className="flex flex-col justify-center gap-12" ref={skillRef}>
+              {/* SKILL TITLE */}
+              <motion.h1
+                initial={{ x: "-300px" }}
+                animate={isSkillRefInView ? { x: 0 } : {}}
+                transition={{ delay: 0.2 }}
+                className="text-2xl font-bold"
+              >
+                SKILLS
+              </motion.h1>
+              {/* SKILL LIST */}
+              <motion.div
+                initial={{ x: "-300px" }}
+                animate={isSkillRefInView ? { x: 0 } : {}}
+                className="flex flex-wrap gap-4"
+              >
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  JavaScript
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  TypeScript
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  React.js
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Next.js
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  SCSS
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Tailwind CSS
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  MongoDB
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  PostgreSQL
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Node.js
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Nest.js
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Express.js
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Spring Boot
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  GraphQL
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Apollo
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Redux
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Framer Motion
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Three.js
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  WebGL
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Webpack
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Vite
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Docker
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  AWS
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Firebase
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Git
+                </div>
+                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
+                  Figma
+                </div>
+              </motion.div>
+              {/* SKILL SCROLL SVG */}
+              <motion.svg
+                initial={{ opacity: 0.2, y: 0 }}
+                animate={{ opacity: 1, y: "10px" }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                }}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width={50}
+                height={50}
+              >
+                <path
+                  d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
+                  stroke="#000000"
+                  strokeWidth="1"
+                ></path>
+                <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
+                <path
+                  d="M15 11L12 14L9 11"
+                  stroke="#000000"
+                  strokeWidth="1"
+                ></path>
+              </motion.svg>
+            </div>
+            {/* EXPERIENCE CONTAINER */}
+            <div
+              className="flex flex-col justify-center gap-12 pb-48"
+              ref={experienceRef}
             >
-              <path
-                d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z"
-                data-name="2-Arrow Down"
-              />
-            </svg>
-          </div>
-          {/* SKILLS CONTAINER */}
-          <div className="flex flex-col justify-center gap-12">
-            {/* heading */}
-            <h1 className="text-2xl font-bold">SKILLS</h1>
-            {/* skill list */}
-            <div className="flex flex-wrap gap-3">
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Java script
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                HTML
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Css
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Git
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Github
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                React
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Testing
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Type script
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                ssr
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Next
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Cms
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Responsive design
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Tailwind
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Bootsrap
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                Framer motion
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                redux
-              </div>{" "}
-              <div className="inline-block cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                react query
-              </div>{" "}
+              {/* EXPERIENCE TITLE */}
+              <motion.h1
+                initial={{ x: "-300px" }}
+                animate={isExperienceRefInView ? { x: "0" } : {}}
+                transition={{ delay: 0.2 }}
+                className="text-2xl font-bold"
+              >
+                EXPERIENCE
+              </motion.h1>
+              {/* EXPERIENCE LIST */}
+              <motion.div
+                initial={{ x: "-300px" }}
+                animate={isExperienceRefInView ? { x: "0" } : {}}
+                className=""
+              >
+                {/* EXPERIENCE LIST ITEM */}
+                <div className="flex h-48 justify-between">
+                  {/* LEFT */}
+                  <div className="w-1/3">
+                    {/* JOB TITLE */}
+                    <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
+                      Senior JavaScript Engineer
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      I led web development, offering expertise in JavaScript
+                      frameworks.{" "}
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-sm font-semibold text-red-400">
+                      2024 - Present
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="w-fit rounded bg-white p-1 text-sm font-semibold">
+                      Apple
+                    </div>
+                  </div>
+                  {/* CENTER */}
+                  <div className="flex w-1/6 justify-center">
+                    {/* LINE */}
+                    <div className="relative h-full w-1 rounded bg-gray-600">
+                      {/* LINE CIRCLE */}
+                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
+                    </div>
+                  </div>
+                  {/* RIGHT */}
+                  <div className="w-1/3"></div>
+                </div>
+                {/* EXPERIENCE LIST ITEM */}
+                <div className="flex h-48 justify-between">
+                  {/* LEFT */}
+                  <div className="w-1/3"></div>
+                  {/* CENTER */}
+                  <div className="flex w-1/6 justify-center">
+                    {/* LINE */}
+                    <div className="relative h-full w-1 rounded bg-gray-600">
+                      {/* LINE CIRCLE */}
+                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
+                    </div>
+                  </div>
+                  {/* RIGHT */}
+                  <div className="w-1/3">
+                    {/* JOB TITLE */}
+                    <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
+                      Senior React Developer
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      I spearheaded React-based application development,
+                      leveraging advanced skills.{" "}
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-sm font-semibold text-red-400">
+                      2019 - 2024{" "}
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="w-fit rounded bg-white p-1 text-sm font-semibold">
+                      Microsoft
+                    </div>
+                  </div>
+                </div>
+                {/* EXPERIENCE LIST ITEM */}
+                <div className="flex h-48 justify-between">
+                  {/* LEFT */}
+                  <div className="w-1/3">
+                    {/* JOB TITLE */}
+                    <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
+                      Freelancer{" "}
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      I provided web solutions, applying a range of technologies
+                      to address client requirements.{" "}
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-sm font-semibold text-red-400">
+                      2010 - 2019{" "}
+                    </div>
+                  </div>
+                  {/* CENTER */}
+                  <div className="flex w-1/6 justify-center">
+                    {/* LINE */}
+                    <div className="relative h-full w-1 rounded bg-gray-600">
+                      {/* LINE CIRCLE */}
+                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
+                    </div>
+                  </div>
+                  {/* RIGHT */}
+                  <div className="w-1/3"></div>
+                </div>
+              </motion.div>
             </div>
           </div>
-
-          {/* scroll svg */}
-          <div>
-            <svg
-              width="40"
-              height="40"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-            >
-              <path
-                d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z"
-                data-name="2-Arrow Down"
-              />
-            </svg>
-          </div>
-          {/* EXPERIENCE CONTAINER */}
-          <div className="mx-auto w-full max-w-4xl px-4 py-16">
-            {/* heading */}
-            <h1 className="mb-16 text-center text-3xl font-bold uppercase tracking-wider">
-              Work Experiences
-            </h1>
-
-            {/* experience timeline */}
-            <div className="relative">
-              {/* vertical timeline */}
-              <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-gradient-to-b from-red-400 to-gray-300"></div>
-
-              {/* experience items */}
-              <div className="space-y-24">
-                {/* experience item 1 */}
-                <div className="flex w-full">
-                  {/* left content */}
-                  <div className="w-1/2 pr-8 text-right">
-                    <div className="rounded-lg bg-white p-6 shadow-md">
-                      <h3 className="text-xl font-bold text-gray-800">
-                        Senior JavaScript Engineer
-                      </h3>
-                      <p className="mt-2 italic text-gray-600">
-                        Developed innovative web applications and led frontend
-                        architecture
-                      </p>
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="text-sm font-semibold text-red-500">
-                          2022 - Present
-                        </span>
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold">
-                          Apple
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* timeline marker */}
-                  <div className="relative flex w-8 flex-shrink-0 items-center justify-center">
-                    <div className="z-10 h-6 w-6 rounded-full border-4 border-red-400 bg-white"></div>
-                  </div>
-
-                  {/* right spacer */}
-                  <div className="w-1/2 pl-8"></div>
-                </div>
-
-                {/* experience item 2 */}
-                <div className="flex w-full">
-                  {/* left spacer */}
-                  <div className="w-1/2 pr-8"></div>
-
-                  {/* timeline marker */}
-                  <div className="relative flex w-8 flex-shrink-0 items-center justify-center">
-                    <div className="z-10 h-6 w-6 rounded-full border-4 border-red-400 bg-white"></div>
-                  </div>
-
-                  {/* right content */}
-                  <div className="w-1/2 pl-8">
-                    <div className="rounded-lg bg-white p-6 shadow-md">
-                      <h3 className="text-xl font-bold text-gray-800">
-                        Frontend Developer
-                      </h3>
-                      <p className="mt-2 italic text-gray-600">
-                        Built responsive UIs and collaborated with design teams
-                      </p>
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="text-sm font-semibold text-red-500">
-                          2020 - 2022
-                        </span>
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold">
-                          Google
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* experience item 3 */}
-                <div className="flex w-full">
-                  {/* left content */}
-                  <div className="w-1/2 pr-8 text-right">
-                    <div className="rounded-lg bg-white p-6 shadow-md">
-                      <h3 className="text-xl font-bold text-gray-800">
-                        Junior Developer
-                      </h3>
-                      <p className="mt-2 italic text-gray-600">
-                        Implemented features and fixed bugs in existing
-                        applications
-                      </p>
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="text-sm font-semibold text-red-500">
-                          2018 - 2020
-                        </span>
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold">
-                          Microsoft
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* timeline marker */}
-                  <div className="relative flex w-8 flex-shrink-0 items-center justify-center">
-                    <div className="z-10 h-6 w-6 rounded-full border-4 border-red-400 bg-white"></div>
-                  </div>
-
-                  {/* right spacer */}
-                  <div className="w-1/2 pl-8"></div>
-                </div>
-              </div>
-            </div>
+          {/* SVG CONTAINER */}
+          <div className="sticky top-0 z-30 hidden w-1/3 lg:block xl:w-1/2">
+            <Brain scrollYProgress={scrollYProgress} />
           </div>
         </div>
-
-        {/* SVG CONTAINER */}
-        <div className="w- hidden w-1/3 lg:block xl:w-1/2"></div>
       </div>
     </motion.div>
   );
-}
+};
 
-export default About;
+export default AboutPage;
