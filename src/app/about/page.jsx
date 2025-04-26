@@ -11,10 +11,16 @@ const AboutPage = () => {
 
   const skillRef = useRef();
   // const isSkillRefInView = useInView(skillRef, {once:true});
-  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+  const isSkillRefInView = useInView(skillRef, {
+    margin: "-100px",
+    once: true,
+  });
 
   const experienceRef = useRef();
-  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
+  const isExperienceRefInView = useInView(experienceRef, {
+    margin: "-100px",
+    once: true,
+  });
 
   return (
     <motion.div
