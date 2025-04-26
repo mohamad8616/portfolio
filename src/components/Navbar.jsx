@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import NavLinks from "./NavLinks";
-import { motion, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 const hambergerMenuLine = "block h-1 w-full bg-black rounded";
 
 const links = [
