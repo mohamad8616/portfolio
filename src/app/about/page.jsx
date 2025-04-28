@@ -43,13 +43,13 @@ const AboutPage = () => {
             {/* BIOGRAPHY CONTAINER */}
             <div className="flex flex-col justify-center gap-12">
               {/* BIOGRAPHY IMAGE */}
-              <Image
+              {/* <Image
                 src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt=""
                 width={112}
                 height={112}
                 className="h-28 w-28 rounded-full object-cover"
-              />
+              /> */}
               {/* BIOGRAPHY TITLE */}
               <h1 className="text-2xl font-bold">BIOGRAPHY</h1>
               {/* BIOGRAPHY DESC */}
