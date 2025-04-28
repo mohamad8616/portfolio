@@ -22,7 +22,7 @@ const Portfolio = () => {
                 key={item.id}
               >
                 <div className="flex flex-col gap-8 text-white">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
+                  <h1 className="mt-16 text-xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
                     {item.title}
                   </h1>
                   <div className="relative h-56 w-80 md:h-64 md:w-96 lg:h-[350px] lg:w-[500px] xl:h-[420px] xl:w-[600px]">
