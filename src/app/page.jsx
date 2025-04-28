@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Portfolio from "@/components/portfolio";
+import Portfolio from "@/components/Portfolio";
 import Link from "next/link";
 const heroBtnStyle = "rounded-lg p-4 ring-1 ring-black";
 
