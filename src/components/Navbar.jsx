@@ -91,17 +91,12 @@ function Navbar() {
         <Link href="/">
           <Image width={24} height={24} src="/github.png" alt="GitHub" />
         </Link>
-        <Link href="/">
-          <Image width={24} height={24} src="/facebook.png" alt="Facebook" />
-        </Link>
+
         <Link href="/">
           <Image width={24} height={24} src="/linkedin.png" alt="LinkedIn" />
         </Link>
         <Link href="/">
           <Image width={24} height={24} src="/instagram.png" alt="Instagram" />
-        </Link>
-        <Link href="/">
-          <Image width={24} height={24} src="/pinterest.png" alt="Pinterest" />
         </Link>
       </div>
       {/* RESPOSIVE MENU */}
