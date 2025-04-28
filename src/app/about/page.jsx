@@ -3,6 +3,7 @@ import Brain from "@/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import AboutSkills from "@/components/AboutSkills";
 
 const AboutPage = () => {
   const containerRef = useRef();
@@ -10,7 +11,7 @@ const AboutPage = () => {
   const { scrollYProgress } = useScroll({ container: containerRef });
 
   const skillRef = useRef();
-  // const isSkillRefInView = useInView(skillRef, {once:true});
+
   const isSkillRefInView = useInView(skillRef, {
     margin: "-100px",
     once: true,
@@ -53,31 +54,57 @@ const AboutPage = () => {
               <h1 className="text-2xl font-bold">BIOGRAPHY</h1>
               {/* BIOGRAPHY DESC */}
               <p className="text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-                reiciendis numquam! Voluptas voluptatibus obcaecati dolore
-                itaque suscipit! Vel doloremque numquam quam nihil.
+                Hi, I’m Mohamad—a passionate and motivated junior front-end
+                developer with 1.5 experience with a keen eye for design and
+                functionality. My journey into web development started with a
+                curiosity for how websites are built, which quickly transformed
+                into a love for crafting clean, responsive, and user-friendly
+                interfaces. Though I’m still early in my career, I’ve built
+                several projects that showcase my skills in Git, Tailwind, and
+                JavaScript, as well as frameworks like React and Next. Each
+                project I work on pushes me to refine my abilities and embrace
+                the latest trends in web development. I thrive on solving
+                problems, learning new technologies, and bringing creative ideas
+                to life. Whether it’s optimizing performance, enhancing
+                accessibility, or designing seamless user experiences, I’m eager
+                to grow and contribute to meaningful projects. Let’s build
+                something amazing together! Feel free to check out my work and
+                connect with me.
               </p>
               {/* BIOGRAPHY QUOTE */}
               <span className="italic">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                {/* BIOGRAPHY QUOTE */}
+                <span className="italic">
+                  Programming is not about typing, it&apos;s about thinking.
+                  Code is just a way to express our thoughts to the machine
+                </span>{" "}
               </span>
+
               {/* BIOGRAPHY SIGN SVG*/}
               <div className="self-end">
                 <svg
-                  width="185"
-                  height="77"
-                  viewBox="0 0 370 114"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 1025 459"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <rect width="1025" height="459" fill="none" />
                   <path
-                    d="M66 2C66 29.4851 68.6687 64.5118 49.3333 87.4444C42.4997 95.5495 35.7683 97.6796 26.2222 101C20.002 103.164 8.87322 103.873 4 99C-0.260934 94.7391 2.94804 88.1756 8.22222 86.2222C13.7053 84.1915 17.942 84 23.7778 84C33.359 84 41.3193 83.5602 50.2222 87C56.6125 89.469 63.5773 91.9131 69.5555 95.5C75.4778 99.0533 87.1838 104.357 93.5 99.4444C96.1292 97.3995 96.2752 92.5118 96.9444 89.5C97.9646 84.9092 92.6432 83.2024 89 83C84.472 82.7484 82.3397 81.8856 82 88C81.8025 91.5554 83.5627 94.4193 86 97C88.9648 100.139 92.0717 100.96 96 98.7778C99.3106 96.9386 98 90.7299 98 87.5C98 85.0327 98.4365 83.1348 99.2222 80.7778C100.357 77.3743 99.2311 78.4486 101.5 77.9444C105.352 77.0886 108 76.4766 108 81.5C108 85.6646 109 89.3473 109 93.5C109 100.142 108.863 95.0454 110.5 91.4444C112.765 86.4616 116.631 81.205 121.5 78.5C127.057 75.4129 126 82.1509 126 85.5C126 92.5532 124.42 102 134 102C142.932 102 153 102.569 153 91.2222C153 87.1735 153.772 81.3206 148 81C141.934 80.663 142.107 81.8068 139.5 86.5C134.378 95.7204 137.972 105 149.5 105C153.589 105 153.996 99.8977 155.5 96.8889C157.902 92.0843 161 85.4067 161 80C161 74.0547 158.407 82.7413 157.222 84.2222C155.194 86.7574 155 92.5718 155 95.7778C155 99.9302 153.8 104.999 158 107.222C161.954 109.316 164.884 106.382 167.778 103.778C171.15 100.743 175.896 99.1107 180 97C186.143 93.8409 191.659 91.4099 198.222 89.2222C206.505 86.4614 214.839 87 223.5 87C230.613 87 231.628 104 222.5 104C216.954 104 199.251 107.814 207 95.2222C211.456 87.9805 214.484 80.6007 220 73.7778C229.781 61.6805 242.696 50.8197 256.222 43C264.769 38.0591 274.192 34.6264 283 30.2222C286.55 28.4473 280.07 32.3343 278.5 33.5556C271.707 38.8391 266.609 45.3914 260.556 51.4444C255.356 56.6444 250.682 61.459 246.5 67.5C242.917 72.6757 239.364 77.3825 236.556 83C233.829 88.4524 231.82 94.3142 228.556 99.4444C226.693 102.371 225.518 107.823 222.5 109.5C214.795 113.78 217.517 100.438 218.056 95.0556C218.678 88.8318 227.982 85.7572 233.056 88.6111C239.614 92.3003 245.506 97.7883 252 101.778C254.886 103.551 259.46 107 263 107C271.267 107 273.32 81.9392 268.778 77.2222C264.112 72.3774 261.206 80.5039 261 84C260.576 91.2135 257.836 96.9269 264.778 102C272.242 107.454 285.041 112.276 292.111 104.833C298.002 98.6323 304.301 90.8902 308.556 83.4444C310.355 80.295 310.132 84.6251 309.444 86C305.387 94.1158 303 102.264 303 111.5C303 116.021 337.534 99.1863 340.5 98C347.33 95.2679 355.47 93.8299 361.778 90C363.935 88.6902 365.473 88 368 88"
+                    d="M524 192C495.931 186.018 468.782 174.466 443.778 160.556C401.705 137.15 359.311 101.546 341.444 55.2778C329.608 24.6254 354.2 8.78164 380.556 3.22222C385.922 2.09032 392.901 0.899371 398.222 2.88889C413.282 8.51977 410.927 27.6563 406.556 39.4444C394.286 72.5277 353.651 95.3668 353.444 132.889C353.237 170.661 414.954 134.071 428.111 126.667C460.552 108.411 493.487 92.7402 528.667 80.4444C550.876 72.682 573.903 66.2724 595.333 56.4444C598.996 54.7647 606.519 52.5843 609 49C611.56 45.3022 601.072 53.2772 597.333 55.7778C542.557 92.4186 488.871 131.005 435.556 169.722C324.923 250.064 221.068 338.621 114 423.5C99.5573 434.95 84.3788 445.497 70 457"
                     stroke="black"
-                    strokeWidth="2"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M535.206 433.606C457.773 431.923 380.851 420.173 305.016 404.967C225.257 388.975 145.808 367.221 73.142 329.882C49.2189 317.589 25.931 303.6 8.52522 282.713C6.86933 280.726 2.38843 271.202 2.38843 276.697C2.38843 294.243 3.81629 314.11 16.3466 327.476C36.0503 348.493 59.4591 353.467 87.8221 353.467C197.1 353.467 304.424 348.085 412.952 333.251C580.399 310.364 746.099 288.489 915.326 288.489C951.064 288.489 986.801 288.489 1022.54 288.489"
+                    stroke="black"
+                    stroke-width="3"
+                    stroke-linecap="round"
                   />
                 </svg>
               </div>
+
               {/* BIOGRAPHY SCROLL SVG */}
               <motion.svg
                 initial={{ opacity: 0.2, y: 0 }}
@@ -118,87 +145,7 @@ const AboutPage = () => {
                 SKILLS
               </motion.h1>
               {/* SKILL LIST */}
-              <motion.div
-                initial={{ x: "-300px" }}
-                animate={isSkillRefInView ? { x: 0 } : {}}
-                className="flex flex-wrap gap-4"
-              >
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  JavaScript
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  TypeScript
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  React.js
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Next.js
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  SCSS
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Tailwind CSS
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  MongoDB
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  PostgreSQL
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Node.js
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Nest.js
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Express.js
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Spring Boot
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  GraphQL
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Apollo
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Redux
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Framer Motion
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Three.js
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  WebGL
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Webpack
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Vite
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Docker
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  AWS
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Firebase
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Git
-                </div>
-                <div className="cursor-pointer rounded bg-black p-2 text-sm text-white hover:bg-white hover:text-black">
-                  Figma
-                </div>
-              </motion.div>
+              <AboutSkills skillRef={skillRef} />
               {/* SKILL SCROLL SVG */}
               <motion.svg
                 initial={{ opacity: 0.2, y: 0 }}
@@ -248,25 +195,35 @@ const AboutPage = () => {
                 className=""
               >
                 {/* EXPERIENCE LIST ITEM */}
-                <div className="flex h-48 justify-between">
+                <div className="flex h-auto justify-between">
                   {/* LEFT */}
                   <div className="w-1/3">
                     {/* JOB TITLE */}
                     <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
-                      Senior JavaScript Engineer
+                      Junior Frontend Developer - remote
                     </div>
                     {/* JOB DESC */}
                     <div className="p-3 text-sm italic">
-                      I led web development, offering expertise in JavaScript
-                      frameworks.{" "}
+                      <p>
+                        Developed and maintained a fully responsive admin
+                        dashboard using React and TanStack Query
+                      </p>
+                      <p>
+                        Styled user interfaces using Tailwind CSS for
+                        performance and clarity
+                      </p>
+                      <p>
+                        Collaborated with remote teams to implement new features
+                        and optimize performance
+                      </p>
                     </div>
                     {/* JOB DATE */}
                     <div className="p-3 text-sm font-semibold text-red-400">
-                      2024 - Present
+                      2023 - 2024
                     </div>
                     {/* JOB COMPANY */}
                     <div className="w-fit rounded bg-white p-1 text-sm font-semibold">
-                      Apple
+                      Tec-Rayaneh, Urmia
                     </div>
                   </div>
                   {/* CENTER */}
@@ -296,20 +253,26 @@ const AboutPage = () => {
                   <div className="w-1/3">
                     {/* JOB TITLE */}
                     <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
-                      Senior React Developer
+                      Junior React Developer
                     </div>
                     {/* JOB DESC */}
                     <div className="p-3 text-sm italic">
-                      I spearheaded React-based application development,
-                      leveraging advanced skills.{" "}
+                      <p>
+                        Designed and developed modular, reusable UI components
+                        for internal business tools
+                      </p>
+                      <p>
+                        Implemented animations and transitions using Framer
+                        Motion for an enhanced UX
+                      </p>
                     </div>
                     {/* JOB DATE */}
                     <div className="p-3 text-sm font-semibold text-red-400">
-                      2019 - 2024{" "}
+                      2022 - 2023{" "}
                     </div>
                     {/* JOB COMPANY */}
                     <div className="w-fit rounded bg-white p-1 text-sm font-semibold">
-                      Microsoft
+                      Mahrad Ahan, Urmia
                     </div>
                   </div>
                 </div>
@@ -319,7 +282,7 @@ const AboutPage = () => {
                   <div className="w-1/3">
                     {/* JOB TITLE */}
                     <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
-                      Freelancer{" "}
+                      Inetrship Freelancer{" "}
                     </div>
                     {/* JOB DESC */}
                     <div className="p-3 text-sm italic">
@@ -328,7 +291,7 @@ const AboutPage = () => {
                     </div>
                     {/* JOB DATE */}
                     <div className="p-3 text-sm font-semibold text-red-400">
-                      2010 - 2019{" "}
+                      2021 - 2022{" "}
                     </div>
                   </div>
                   {/* CENTER */}

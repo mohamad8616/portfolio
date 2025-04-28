@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Portfolio from "@/components/portfolio";
+import Link from "next/link";
 const heroBtnStyle = "rounded-lg p-4 ring-1 ring-black";
 
 const Homepage = () => {
@@ -10,17 +12,7 @@ const Homepage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="gap-y-16px-4 flex h-full flex-col items-center sm:gap-y-6 sm:px-8 md:px-12 lg:flex-row lg:px-20 xl:px-48">
-        {/* IMAGE CONTAINER */}
-
-        {/* <div className="relative h-1/2 lg:h-full lg:w-1/2">
-          <Image
-            alt="hero"
-            src="/hero.png"
-            fill
-            className="z-0 object-contain"
-          />
-        </div> */}
+      <div className="gap-y-16px-4 flex min-h-full flex-col items-center px-8 py-20 sm:gap-y-6 sm:px-8 md:px-12 lg:flex-row lg:px-20 xl:px-48">
         <div className="relative h-[500px] w-full lg:h-[700px] lg:w-1/2">
           <Image
             alt="Hero illustration"
@@ -39,20 +31,39 @@ const Homepage = () => {
           </h1>
           {/* DESC */}
           <p className="md:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-            ratione dicta iusto fuga velit nihil ipsum, sequi nostrum, nemo
-            porro ipsam quia eaque iure et molestiae exercitationem quasi.
-            Explicabo doloremque magni corrupti maiores earum? Provident et a
-            culpa inventore recusandae!
+            Hey, I’m Mohamad—a passionate front-end developer on a journey to
+            craft beautiful and functional web experiences. I’m constantly
+            learning and experimenting to bring ideas to life through code.
+          </p>
+          <p className="md:text-xl">
+            While I may be new to the field, I’ve already built several projects
+            that showcase my ability to turn concepts into reality. Every
+            challenge I tackle teaches me something new, and I’m excited to grow
+            with every line of code I write.
+          </p>
+          <p className="md:text-xl">
+            I focus on clean, responsive design and intuitive user experiences.
+            My goal is to create websites that not only look great but feel
+            great to use.
+          </p>
+          <p className="md:text-xl">
+            If you want to collaborate, chat, or simply geek out over front-end
+            development, feel free to connect!
           </p>
           <div className="flex w-full gap-4">
-            <button className={`${heroBtnStyle} bg-black text-white`}>
+            <Link
+              href="portfolio"
+              className={`${heroBtnStyle} bg-black text-white`}
+            >
               View my work
-            </button>
-            <button className={heroBtnStyle}>Contact</button>
+            </Link>
+            <Link href="contact" className={heroBtnStyle}>
+              Contact
+            </Link>
           </div>
         </div>
       </div>
+      <Portfolio />
     </motion.div>
   );
 };

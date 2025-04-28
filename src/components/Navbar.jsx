@@ -75,27 +75,16 @@ function Navbar() {
           <NavLinks key={link.title} link={link} />
         ))}
       </div>
-      <div className="justify-center md:hidden lg:flex xl:w-1/3">
-        {/* {LOGO} */}
-        <Link
-          href="/"
-          className="flex items-center justify-center rounded-md bg-black p-1 text-sm font-semibold"
-        >
-          <span className="mr-1 text-white">Lama</span>
-          <span className="flex h-8 w-12 items-center justify-center rounded bg-white text-black">
-            .dev
-          </span>
-        </Link>
-      </div>
+      <div className="justify-center md:hidden lg:flex xl:w-1/3"></div>
       <div className="hidden w-1/3 gap-4 md:flex">
-        <Link href="/">
+        <Link href="www.github.com/mohamad8616">
           <Image width={24} height={24} src="/github.png" alt="GitHub" />
         </Link>
 
-        <Link href="/">
+        <Link href="www.linkedin.com/in/mohamad-abdolahi">
           <Image width={24} height={24} src="/linkedin.png" alt="LinkedIn" />
         </Link>
-        <Link href="/">
+        <Link href="instagram.com">
           <Image width={24} height={24} src="/instagram.png" alt="Instagram" />
         </Link>
       </div>

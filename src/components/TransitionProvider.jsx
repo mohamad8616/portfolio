@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, delay, easeIn, easeOut, motion } from "framer-motion";
+import { AnimatePresence, easeOut, motion } from "framer-motion";
 import Navbar from "./Navbar";
 import { usePathname } from "next/navigation";
 function TransitionProvider({ children }) {
@@ -28,7 +28,7 @@ function TransitionProvider({ children }) {
         <div className="h-24">
           <Navbar />
         </div>
-        <div className="min-h-[calc(100vh-6rem)]">{children}</div>
+        <div className="h-auto min-h-[calc(100vh-6rem)]">{children}</div>
       </div>
       ;
     </AnimatePresence>
