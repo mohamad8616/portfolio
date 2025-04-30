@@ -3,6 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Portfolio from "@/components/Portfolio";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
+
 const heroBtnStyle = "rounded-lg p-4 ring-1 ring-black";
 
 const Homepage = () => {
@@ -12,28 +14,34 @@ const Homepage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="gap-y-16px-4 flex min-h-full flex-col items-center px-8 py-20 sm:gap-y-6 sm:px-8 md:px-12 lg:flex-row lg:px-20 xl:px-48">
-        <div className="relative h-[500px] w-full lg:h-[700px] lg:w-1/2">
+      <div className="gap-y-16px-4 flex min-h-full flex-col items-center gap-10 px-8 py-20 sm:gap-y-6 sm:px-8 md:mt-32 md:flex-row md:px-12 lg:px-20 xl:px-48">
+        <div className="relative h-[500px] w-full rounded-md md:h-[700px] md:w-1/2">
           <Image
             alt="Hero illustration"
-            src="/hero.png"
+            src="/mohamad.jpg"
             fill
-            className="object-contain"
+            className="rounded-md object-contain"
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
         {/* TEXT CONTAINER */}
-        <div className="flex h-1/2 flex-col items-center justify-center gap-8 md:h-full lg:w-1/2">
+        <div className="relative flex h-1/2 flex-col items-center justify-center gap-8 font-light md:h-full md:w-1/2">
           {/* TITLE */}
-          <h1 className="text-4xl font-bold md:text-6xl">
-            crafting digital experience, designing tomorrow
+          <h1 className="z-20 transform text-start text-4xl font-medium text-white/60 md:absolute md:-top-28 md:-translate-x-1/2 md:text-7xl lg:w-[700px]">
+            {/* Hi, I&apos;m Mohammad. */}
+            <TypeAnimation
+              sequence={["I'm Mohamad", 1000, "Front-end Dev", 1000]}
+              wrapper="h1"
+              speed={200}
+              repeat={Infinity}
+            />
           </h1>
           {/* DESC */}
-          <p className="md:text-xl">
-            Hey, I’m Mohamad—a passionate front-end developer on a journey to
-            craft beautiful and functional web experiences. I’m constantly
-            learning and experimenting to bring ideas to life through code.
+          <p className="md:mt-30 md:text-xl">
+            A passionate front-end developer on a journey to craft beautiful and
+            functional web experiences. I’m constantly learning and
+            experimenting to bring ideas to life through code.
           </p>
           <p className="md:text-xl">
             While I may be new to the field, I’ve already built several projects
@@ -53,11 +61,14 @@ const Homepage = () => {
           <div className="flex w-full gap-4">
             <Link
               href="portfolio"
-              className={`${heroBtnStyle} bg-black text-white`}
+              className={`${heroBtnStyle} transition-[background-color, color] duration-200ms bg-[#415A77] font-semibold text-[#fff] transition duration-200 ease-in-out hover:bg-[#E0E1DD] hover:text-[#415A77]`}
             >
               View my work
             </Link>
-            <Link href="contact" className={heroBtnStyle}>
+            <Link
+              href="contact"
+              className={`${heroBtnStyle} bg-[#415A77] font-semibold transition duration-200 ease-in-out hover:bg-[#E0E1DD] hover:text-[#415A77]`}
+            >
               Contact
             </Link>
           </div>

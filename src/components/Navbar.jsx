@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import NavLinks from "./NavLinks";
 import { motion } from "framer-motion";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 const hambergerMenuLine = "block h-1 w-full bg-black rounded";
 
 const links = [
@@ -78,14 +79,17 @@ function Navbar() {
       <div className="justify-center md:hidden lg:flex xl:w-1/3"></div>
       <div className="hidden w-1/3 gap-4 md:flex">
         <Link href="www.github.com/mohamad8616">
-          <Image width={24} height={24} src="/github.png" alt="GitHub" />
+          {/* <Image width={24} height={24} src="/github.png" alt="GitHub" /> */}
+          <FaGithub className="text-[#415A77]" width={30} height={30} />
         </Link>
 
         <Link href="www.linkedin.com/in/mohamad-abdolahi">
-          <Image width={24} height={24} src="/linkedin.png" alt="LinkedIn" />
+          {/* <Image width={24} height={24} src="/linkedin.png" alt="LinkedIn" /> */}
+          <FaLinkedin className="text-blue-600" width={30} height={30} />
         </Link>
         <Link href="instagram.com">
-          <Image width={24} height={24} src="/instagram.png" alt="Instagram" />
+          {/* <Image width={24} height={24} src="/instagram.png" alt="Instagram" /> */}
+          <FaInstagram className="text-red-600" width={30} height={30} />
         </Link>
       </div>
       {/* RESPOSIVE MENU */}
@@ -96,17 +100,17 @@ function Navbar() {
         >
           <motion.span
             variants={topVariants}
-            className={`${hambergerMenuLine} origin-left`}
+            className={`${hambergerMenuLine} origin-left bg-[var(--btn-ternary)]`}
             animate={open ? "opened" : "closed"}
           ></motion.span>
           <motion.span
             variants={centerVariants}
-            className={hambergerMenuLine}
+            className={`${hambergerMenuLine} ${open ? "" : "bg-[var(--btn-ternary)]"} `}
             animate={open ? "opened" : "closed"}
           ></motion.span>
           <motion.span
             variants={bottomVariants}
-            className={`${hambergerMenuLine} origin-left`}
+            className={`${hambergerMenuLine} origin-left bg-[var(--btn-ternary)]`}
             animate={open ? "opened" : "closed"}
           ></motion.span>
         </button>
@@ -116,11 +120,11 @@ function Navbar() {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className="absolute left-0 top-0 z-40 flex h-screen w-screen flex-col items-center justify-center gap-8 bg-black text-4xl text-white"
+            className="text-var(--btn-ternary)] absolute left-0 top-0 z-30 flex h-screen w-screen flex-col items-center justify-center gap-8 bg-black text-4xl"
           >
             {links.map((link) => (
               <motion.div variants={listItemsVariant} key={link.title}>
-                <Link href={link.href}>{link.title}</Link>
+                <NavLinks link={link} />
               </motion.div>
             ))}
           </motion.div>

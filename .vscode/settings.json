@@ -1,13 +1,13 @@
 {
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": true,
     "markdown": true,
     "scminput": false,
     "javascript": true,
     "typescript": true,
-    "javascriptreact": false,
+    "javascriptreact": true,
     "typescriptreact": true
   },
   "editor.acceptSuggestionOnEnter": "on",

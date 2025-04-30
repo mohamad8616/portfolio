@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaWhatsapp } from "react-icons/fa6";
+const text = "Get In Touch";
 
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const text = "Say Hello";
 
   const form = useRef();
 
@@ -43,35 +43,35 @@ const ContactPage = () => {
     >
       <div className="mb-20 flex h-full w-full items-center justify-center px-1 sm:px-4 md:px-12 lg:px-20 xl:px-48">
         <div className="mx-6 flex h-full w-full flex-col items-center justify-center space-y-12 py-16 text-3xl md:mx-0 md:text-5xl lg:text-6xl">
-          <h1 className="font-bold text-gray-800 dark:text-gray-200">
+          <h1 className="font-bold text-[var(--btn-ternary)] dark:text-gray-200">
             {text.split("").map((letter, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
                 transition={{
-                  duration: 3,
+                  duration: 2,
                   repeat: Infinity,
-                  delay: index * 0.1,
+                  delay: index * 0.2,
                 }}
                 className="inline-block"
               >
                 {letter}
               </motion.span>
             ))}
+
             <span role="img" aria-label="Smiling face">
               😊
             </span>
           </h1>
 
           <div className="flex w-full flex-col items-stretch justify-between gap-10 lg:flex-row">
-            <div className="rounded-lg bg-white px-8 py-10 shadow-lg dark:bg-gray-800 lg:w-1/2">
+            <div className="rounded-lg bg-[var(--btn-ternary)] px-8 py-10 shadow-lg dark:bg-gray-800 lg:w-1/2">
               <h2 className="mb-6 border-b-2 border-gray-200 pb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">
                 Contact me
               </h2>
               <p className="mb-4 text-lg text-gray-600 dark:text-gray-400">
-                I&apos;m available for freelance work and projects. Don&apos;t
-                hesitate to reach out!
+                I&apos;m available . Don&apos;t hesitate to reach out!
               </p>
               <p className="flex items-center text-lg text-gray-600 dark:text-gray-400">
                 <FaWhatsapp
@@ -83,14 +83,20 @@ const ContactPage = () => {
                   href="https://wa.me/989333449036"
                   className="hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  (+98) 933 344 9036
+                  (Click): (+98) 933 344 9036
                 </a>
               </p>
+              <a
+                href="mailto:mohamad.sh.a9036@gmail.com"
+                className="text-lg text-gray-600 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:text-gray-400"
+              >
+                @ mohamad.sh.a9036@gmail.com
+              </a>
             </div>
             <form
               onSubmit={sendEmail}
               ref={form}
-              className="rounded-lg bg-white p-8 text-lg shadow-lg dark:bg-gray-800 lg:w-1/2"
+              className="rounded-lg bg-[var(--btn-ternary)] p-8 text-lg shadow-lg dark:bg-gray-800 lg:w-1/2"
             >
               <label
                 htmlFor="user_message"

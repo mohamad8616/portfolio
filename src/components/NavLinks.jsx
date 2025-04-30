@@ -7,7 +7,7 @@ function NavLinks({ link }) {
   return (
     <Link
       href={link.href}
-      className={` ${isActive ? "bg-black text-white" : ""} rounded p-1`}
+      className={` ${isActive ? "bg-[#E0E1DD] text-[#0D1B2A]" : ""} rounded p-1`}
     >
       {link.title}
     </Link>

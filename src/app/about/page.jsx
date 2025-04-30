@@ -35,11 +35,11 @@ const AboutPage = () => {
         {" "}
         {/* Changed container */}
         <div
-          className="h-full w-full overflow-y-auto lg:flex"
+          className="h-full w-full gap-10 overflow-y-auto lg:flex"
           ref={containerRef}
         >
           {/* TEXT CONTAINER */}
-          <div className="flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-48 lg:p-20 lg:pr-0 xl:w-1/2 xl:gap-64 xl:p-48">
+          <div className="flex flex-col gap-24 p-4 sm:p-8 md:gap-32 md:p-12 lg:w-2/3 lg:gap-32 lg:px-4 lg:py-20 lg:pr-0 xl:w-1/2 xl:gap-48 xl:p-24">
             {/* BIOGRAPHY CONTAINER */}
             <div className="flex flex-col justify-center gap-12">
               {/* BIOGRAPHY IMAGE */}
@@ -133,6 +133,140 @@ const AboutPage = () => {
                 ></path>
               </motion.svg>
             </div>
+
+            {/* EXPERIENCE CONTAINER */}
+            <div
+              className="flex flex-col justify-center gap-12 pb-48"
+              ref={experienceRef}
+            >
+              {/* EXPERIENCE TITLE */}
+              <motion.h1
+                initial={{ x: "-300px" }}
+                animate={isExperienceRefInView ? { x: "0" } : {}}
+                transition={{ delay: 0.2 }}
+                className="text-2xl font-bold"
+              >
+                EXPERIENCE
+              </motion.h1>
+              {/* EXPERIENCE LIST */}
+              <motion.div
+                initial={{ x: "-300px" }}
+                animate={isExperienceRefInView ? { x: "0" } : {}}
+                className=""
+              >
+                {/* EXPERIENCE LIST ITEM */}
+                <div className="flex h-auto justify-between">
+                  {/* LEFT */}
+                  <div className="w-1/3">
+                    {/* JOB TITLE */}
+                    <div className="rounded-b-lg rounded-s-lg bg-[var(--btn-ternary)] p-3 font-semibold text-[var(--primary)]">
+                      Junior Frontend Developer - remote
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      <p>
+                        Developed and maintained a fully responsive admin
+                        dashboard using React and TanStack Query
+                      </p>
+                      <p>
+                        Styled user interfaces using Tailwind CSS for
+                        performance and clarity
+                      </p>
+                      <p>
+                        Collaborated with remote teams to implement new features
+                        and optimize performance
+                      </p>
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-sm font-semibold text-red-400">
+                      2023 - 2024
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="w-fit rounded bg-[var(--btn-ternary)] p-1 text-sm font-semibold text-[var(--primary)]">
+                      Tec-Rayaneh, Urmia
+                    </div>
+                  </div>
+                  {/* CENTER */}
+                  <div className="flex w-1/6 justify-center">
+                    {/* LINE */}
+                    <div className="relative h-full w-1 rounded bg-gray-600">
+                      {/* LINE CIRCLE */}
+                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
+                    </div>
+                  </div>
+                  {/* RIGHT */}
+                  <div className="w-1/3"></div>
+                </div>
+                {/* EXPERIENCE LIST ITEM */}
+                <div className="flex h-48 justify-between">
+                  {/* LEFT */}
+                  <div className="w-1/3"></div>
+                  {/* CENTER */}
+                  <div className="flex w-1/6 justify-center">
+                    {/* LINE */}
+                    <div className="relative h-full w-1 rounded bg-gray-600">
+                      {/* LINE CIRCLE */}
+                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
+                    </div>
+                  </div>
+                  {/* RIGHT */}
+                  <div className="w-1/3">
+                    {/* JOB TITLE */}
+                    <div className="rounded-b-lg rounded-s-lg bg-[var(--btn-ternary)] p-3 font-semibold text-[var(--primary)]">
+                      Junior React Developer
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      <p>
+                        Designed and developed modular, reusable UI components
+                        for internal business tools
+                      </p>
+                      <p>
+                        Implemented animations and transitions using Framer
+                        Motion for an enhanced UX
+                      </p>
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-sm font-semibold text-red-400">
+                      2022 - 2023{" "}
+                    </div>
+                    {/* JOB COMPANY */}
+                    <div className="w-fit rounded bg-[var(--btn-ternary)] p-1 text-sm font-semibold text-[var(--primary)]">
+                      Mahrad Ahan, Urmia
+                    </div>
+                  </div>
+                </div>
+                {/* EXPERIENCE LIST ITEM */}
+                <div className="flex h-48 justify-between">
+                  {/* LEFT */}
+                  <div className="w-1/3">
+                    {/* JOB TITLE */}
+                    <div className="rounded-b-lg rounded-s-lg bg-[var(--btn-ternary)] p-3 font-semibold text-[var(--primary)]">
+                      Inetrship Freelancer{" "}
+                    </div>
+                    {/* JOB DESC */}
+                    <div className="p-3 text-sm italic">
+                      I provided web solutions, applying a range of technologies
+                      to address client requirements.{" "}
+                    </div>
+                    {/* JOB DATE */}
+                    <div className="p-3 text-sm font-semibold text-red-400">
+                      2021 - 2022{" "}
+                    </div>
+                  </div>
+                  {/* CENTER */}
+                  <div className="flex w-1/6 justify-center">
+                    {/* LINE */}
+                    <div className="relative h-full w-1 rounded bg-gray-600">
+                      {/* LINE CIRCLE */}
+                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
+                    </div>
+                  </div>
+                  {/* RIGHT */}
+                  <div className="w-1/3"></div>
+                </div>
+              </motion.div>
+            </div>
             {/* SKILLS CONTAINER */}
             <div className="flex flex-col justify-center gap-12" ref={skillRef}>
               {/* SKILL TITLE */}
@@ -174,140 +308,8 @@ const AboutPage = () => {
                 ></path>
               </motion.svg>
             </div>
-            {/* EXPERIENCE CONTAINER */}
-            <div
-              className="flex flex-col justify-center gap-12 pb-48"
-              ref={experienceRef}
-            >
-              {/* EXPERIENCE TITLE */}
-              <motion.h1
-                initial={{ x: "-300px" }}
-                animate={isExperienceRefInView ? { x: "0" } : {}}
-                transition={{ delay: 0.2 }}
-                className="text-2xl font-bold"
-              >
-                EXPERIENCE
-              </motion.h1>
-              {/* EXPERIENCE LIST */}
-              <motion.div
-                initial={{ x: "-300px" }}
-                animate={isExperienceRefInView ? { x: "0" } : {}}
-                className=""
-              >
-                {/* EXPERIENCE LIST ITEM */}
-                <div className="flex h-auto justify-between">
-                  {/* LEFT */}
-                  <div className="w-1/3">
-                    {/* JOB TITLE */}
-                    <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
-                      Junior Frontend Developer - remote
-                    </div>
-                    {/* JOB DESC */}
-                    <div className="p-3 text-sm italic">
-                      <p>
-                        Developed and maintained a fully responsive admin
-                        dashboard using React and TanStack Query
-                      </p>
-                      <p>
-                        Styled user interfaces using Tailwind CSS for
-                        performance and clarity
-                      </p>
-                      <p>
-                        Collaborated with remote teams to implement new features
-                        and optimize performance
-                      </p>
-                    </div>
-                    {/* JOB DATE */}
-                    <div className="p-3 text-sm font-semibold text-red-400">
-                      2023 - 2024
-                    </div>
-                    {/* JOB COMPANY */}
-                    <div className="w-fit rounded bg-white p-1 text-sm font-semibold">
-                      Tec-Rayaneh, Urmia
-                    </div>
-                  </div>
-                  {/* CENTER */}
-                  <div className="flex w-1/6 justify-center">
-                    {/* LINE */}
-                    <div className="relative h-full w-1 rounded bg-gray-600">
-                      {/* LINE CIRCLE */}
-                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
-                    </div>
-                  </div>
-                  {/* RIGHT */}
-                  <div className="w-1/3"></div>
-                </div>
-                {/* EXPERIENCE LIST ITEM */}
-                <div className="flex h-48 justify-between">
-                  {/* LEFT */}
-                  <div className="w-1/3"></div>
-                  {/* CENTER */}
-                  <div className="flex w-1/6 justify-center">
-                    {/* LINE */}
-                    <div className="relative h-full w-1 rounded bg-gray-600">
-                      {/* LINE CIRCLE */}
-                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
-                    </div>
-                  </div>
-                  {/* RIGHT */}
-                  <div className="w-1/3">
-                    {/* JOB TITLE */}
-                    <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
-                      Junior React Developer
-                    </div>
-                    {/* JOB DESC */}
-                    <div className="p-3 text-sm italic">
-                      <p>
-                        Designed and developed modular, reusable UI components
-                        for internal business tools
-                      </p>
-                      <p>
-                        Implemented animations and transitions using Framer
-                        Motion for an enhanced UX
-                      </p>
-                    </div>
-                    {/* JOB DATE */}
-                    <div className="p-3 text-sm font-semibold text-red-400">
-                      2022 - 2023{" "}
-                    </div>
-                    {/* JOB COMPANY */}
-                    <div className="w-fit rounded bg-white p-1 text-sm font-semibold">
-                      Mahrad Ahan, Urmia
-                    </div>
-                  </div>
-                </div>
-                {/* EXPERIENCE LIST ITEM */}
-                <div className="flex h-48 justify-between">
-                  {/* LEFT */}
-                  <div className="w-1/3">
-                    {/* JOB TITLE */}
-                    <div className="rounded-b-lg rounded-s-lg bg-white p-3 font-semibold">
-                      Inetrship Freelancer{" "}
-                    </div>
-                    {/* JOB DESC */}
-                    <div className="p-3 text-sm italic">
-                      I provided web solutions, applying a range of technologies
-                      to address client requirements.{" "}
-                    </div>
-                    {/* JOB DATE */}
-                    <div className="p-3 text-sm font-semibold text-red-400">
-                      2021 - 2022{" "}
-                    </div>
-                  </div>
-                  {/* CENTER */}
-                  <div className="flex w-1/6 justify-center">
-                    {/* LINE */}
-                    <div className="relative h-full w-1 rounded bg-gray-600">
-                      {/* LINE CIRCLE */}
-                      <div className="absolute -left-2 h-5 w-5 rounded-full bg-white ring-4 ring-red-400"></div>
-                    </div>
-                  </div>
-                  {/* RIGHT */}
-                  <div className="w-1/3"></div>
-                </div>
-              </motion.div>
-            </div>
           </div>
+
           {/* SVG CONTAINER */}
           <div className="sticky top-0 z-30 hidden w-1/3 lg:block xl:w-1/2">
             <Brain scrollYProgress={scrollYProgress} />

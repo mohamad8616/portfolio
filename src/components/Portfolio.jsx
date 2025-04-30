@@ -13,7 +13,7 @@ const Portfolio = () => {
   return (
     <>
       <div className="relative h-[200vh]" ref={ref}>
-        <div className="sticky top-0 flex h-screen items-center gap-4 overflow-hidden">
+        <div className="sticky top-0 flex h-screen items-center gap-2 overflow-hidden">
           <motion.div style={{ x }} className="flex" id="portfolio">
             {/* <div className="flex h-screen w-screen items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" /> */}
             {items.map((item) => (
@@ -21,8 +21,8 @@ const Portfolio = () => {
                 className={`flex h-screen w-screen items-center justify-center`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
-                  <h1 className="mt-16 text-xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
+                <div className="flex flex-col gap-2 text-white">
+                  <h1 className="mt-10 text-xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
                     {item.title}
                   </h1>
                   <div className="relative h-56 w-80 md:h-64 md:w-96 lg:h-[350px] lg:w-[500px] xl:h-[420px] xl:w-[600px]">
@@ -34,11 +34,11 @@ const Portfolio = () => {
                       priority
                     />
                   </div>
-                  <p className="md:w96 w-80 lg:w-[500px] lg:text-lg xl:w-[600px]">
+                  <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">
                     {item.desc}
                   </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="md:text-md m-4 rounded bg-white p-2 text-sm font-semibold text-gray-600 md:p-4 lg:p-8 lg:text-lg">
+                  <Link href={item.link} className="flex">
+                    <button className="md:text-md my-1 transform rounded bg-[var(--btn-primary)] p-2 text-sm font-semibold text-[var(--btn-ternary)] transition-colors duration-200 hover:bg-[--btn-ternary] hover:text-[--primary] md:p-2 lg:px-4 lg:text-lg">
                       See Demo
                     </button>
                   </Link>
@@ -63,8 +63,11 @@ const Portfolio = () => {
                 d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
               />
             </defs>
-            <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl">
+            <text fill="#dedede">
+              <textPath
+                xlinkHref="#circlePath"
+                className="text-[var(--btn-ternary]) text-xl"
+              >
                 Front-end Developer and UI Designer
               </textPath>
             </text>
@@ -73,7 +76,7 @@ const Portfolio = () => {
             href="/contact"
             className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-black text-white md:h-28 md:w-28"
           >
-            Hire Me
+            Tell me
           </Link>
         </div>
       </div>

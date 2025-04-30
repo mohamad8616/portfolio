@@ -8,20 +8,20 @@ function TransitionProvider({ children }) {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="h-auto min-h-screen w-screen bg-gradient-to-b from-stone-300 to-blue-300"
+        className="h-auto min-h-screen w-screen bg-gradient-to-b from-[#0D1B2A] to-[#000] text-stone-100"
       >
         <motion.div
           animate={{ height: "0vh" }}
           exit={{ height: "100vh" }}
           transition={{ duration: 0.5, ease: easeOut }}
-          className="fixed z-40 h-screen w-screen rounded-b-[100px] bg-black"
+          className="fixed z-40 h-screen w-screen rounded-b-[100px] bg-[var(--btn-ternary)]"
         />
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: easeOut }}
-          className="fixed bottom-0 left-0 right-0 top-0 z-50 m-auto h-fit w-fit cursor-default text-8xl text-white"
+          className="fixed bottom-0 left-0 right-0 top-0 z-50 m-auto h-fit w-fit cursor-default text-8xl text-stone-800"
         >
           {pathName.slice(1)}
         </motion.div>
