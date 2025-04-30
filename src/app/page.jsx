@@ -28,7 +28,7 @@ const Homepage = () => {
         {/* TEXT CONTAINER */}
         <div className="relative flex h-1/2 flex-col items-center justify-center gap-8 font-light md:h-full md:w-1/2">
           {/* TITLE */}
-          <h1 className="z-20 transform text-start text-4xl font-medium text-white/60 md:absolute md:-top-28 md:-translate-x-1/2 md:text-7xl lg:w-[700px]">
+          <h1 className="z-20 transform text-start text-4xl font-medium text-white/60 md:absolute md:-top-28 md:w-[700px] md:-translate-x-20 md:text-7xl lg:-translate-x-10">
             {/* Hi, I&apos;m Mohammad. */}
             <TypeAnimation
               sequence={["I'm Mohamad", 1000, "Front-end Dev", 1000]}
