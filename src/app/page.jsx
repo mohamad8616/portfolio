@@ -13,8 +13,9 @@ const Homepage = () => {
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
+      className="h-full w-full"
     >
-      <div className="gap-y-16px-4 flex min-h-full flex-col items-center gap-10 px-8 py-20 sm:gap-y-6 sm:px-8 md:mt-32 md:flex-row md:px-12 lg:px-20 xl:px-48">
+      <div className="gap-y-16px flex min-h-full flex-col items-center gap-10 px-8 py-20 sm:gap-y-6 sm:px-8 md:mt-32 md:flex-row md:px-12 lg:px-20 xl:px-48">
         <div className="relative h-[500px] w-full rounded-md md:h-[700px] md:w-1/2">
           <Image
             alt="Hero illustration"

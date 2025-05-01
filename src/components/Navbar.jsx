@@ -100,17 +100,17 @@ function Navbar() {
         >
           <motion.span
             variants={topVariants}
-            className={`${hambergerMenuLine} origin-left bg-[var(--btn-ternary)]`}
+            className={`${hambergerMenuLine} origin-left bg-white`}
             animate={open ? "opened" : "closed"}
           ></motion.span>
           <motion.span
             variants={centerVariants}
-            className={`${hambergerMenuLine} ${open ? "" : "bg-[var(--btn-ternary)]"} `}
+            className={`${hambergerMenuLine} ${open ? "" : "bg-white"} `}
             animate={open ? "opened" : "closed"}
           ></motion.span>
           <motion.span
             variants={bottomVariants}
-            className={`${hambergerMenuLine} origin-left bg-[var(--btn-ternary)]`}
+            className={`${hambergerMenuLine} origin-left bg-white`}
             animate={open ? "opened" : "closed"}
           ></motion.span>
         </button>

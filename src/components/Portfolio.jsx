@@ -13,7 +13,7 @@ const Portfolio = () => {
   return (
     <>
       <div className="relative h-[200vh]" ref={ref}>
-        <div className="sticky top-0 flex h-screen items-center gap-2 overflow-hidden">
+        <div className="sticky top-0 flex h-screen w-full items-center gap-2 overflow-hidden">
           <motion.div style={{ x }} className="flex" id="portfolio">
             {/* <div className="flex h-screen w-screen items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" /> */}
             {items.map((item) => (
@@ -21,34 +21,34 @@ const Portfolio = () => {
                 className={`flex h-screen w-screen items-center justify-center`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-2 text-white">
-                  <h1 className="mt-10 text-xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
-                    {item.title}
-                  </h1>
-                  <div className="relative h-56 w-80 md:h-64 md:w-96 lg:h-[350px] lg:w-[500px] xl:h-[420px] xl:w-[600px]">
-                    <Image
-                      src="/casablanca-hotel.webp"
-                      alt={item.title}
-                      fill
-                      className="object-contain"
-                      priority
-                    />
+                <div className="flex h-4/5 w-3/4 flex-col items-center justify-center gap-2 px-4 text-white">
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-y-5 py-10 sm:w-3/4 md:w-10/12">
+                    <h1 className="text-xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
+                      {item.title}
+                    </h1>
+                    <div className="relative aspect-video h-full w-full">
+                      <Image
+                        src="/casablanca-hotel.webp"
+                        alt={item.title}
+                        fill
+                        className="object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="w-full lg:text-lg">{item.desc}</p>
+                    <Link href={item.link} className="flex place-self-start">
+                      <button className="md:text-md my-1 transform rounded bg-[var(--btn-primary)] p-2 text-sm font-semibold text-[var(--btn-ternary)] transition-colors duration-200 hover:bg-[--btn-ternary] hover:text-[--primary] md:p-2 lg:px-4 lg:text-lg">
+                        See Demo
+                      </button>
+                    </Link>
                   </div>
-                  <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">
-                    {item.desc}
-                  </p>
-                  <Link href={item.link} className="flex">
-                    <button className="md:text-md my-1 transform rounded bg-[var(--btn-primary)] p-2 text-sm font-semibold text-[var(--btn-ternary)] transition-colors duration-200 hover:bg-[--btn-ternary] hover:text-[--primary] md:p-2 lg:px-4 lg:text-lg">
-                      See Demo
-                    </button>
-                  </Link>
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
-      <div className="flex h-screen w-screen flex-col items-center justify-center gap-16 text-center">
+      <div className="flex h-screen w-full flex-col items-center justify-center gap-16 text-center">
         <h1 className="text-4xl">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
