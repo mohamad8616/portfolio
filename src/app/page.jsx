@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import Portfolio from "@/components/Portfolio";
 import Link from "next/link";
@@ -16,14 +16,11 @@ const Homepage = () => {
       className="h-full w-full"
     >
       <div className="gap-y-16px flex min-h-full flex-col items-center gap-10 px-8 py-20 sm:gap-y-6 sm:px-8 md:mt-32 md:flex-row md:px-12 lg:px-20 xl:px-48">
-        <div className="relative h-[500px] w-full rounded-md md:h-[700px] md:w-1/2">
-          <Image
+        <div className="h-10/12 w-10/12 rounded-md md:w-1/2">
+          <img
             alt="Hero illustration"
             src="/mohamad.jpg"
-            fill
-            className="rounded-md object-contain"
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+            className="w-full rounded-md object-top"
           />
         </div>
         {/* TEXT CONTAINER */}

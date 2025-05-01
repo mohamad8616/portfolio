@@ -12,7 +12,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="relative h-[200vh]" ref={ref}>
+      <div className="relative mt-10 h-[200vh]" ref={ref}>
         <div className="sticky top-0 flex h-screen w-full items-center gap-2 overflow-hidden">
           <motion.div style={{ x }} className="flex" id="portfolio">
             {/* <div className="flex h-screen w-screen items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" /> */}
@@ -22,25 +22,23 @@ const Portfolio = () => {
                 key={item.id}
               >
                 <div className="flex h-4/5 w-3/4 flex-col items-center justify-center gap-2 px-4 text-white">
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-y-5 py-10 sm:w-3/4 md:w-10/12">
-                    <h1 className="text-xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
+                  <div className="mt-10 flex h-full w-full flex-col items-center justify-center gap-y-5 py-10 sm:w-3/4 md:w-10/12">
+                    <h1 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-6xl">
                       {item.title}
                     </h1>
                     <div className="relative aspect-video h-full w-full">
-                      <Image
+                      <img
                         src="/casablanca-hotel.webp"
                         alt={item.title}
-                        fill
                         className="object-contain"
-                        loading="lazy"
                       />
                     </div>
                     <p className="w-full lg:text-lg">{item.desc}</p>
-                    <Link href={item.link} className="flex place-self-start">
+                    <a href={item.link} className="flex place-self-start">
                       <button className="md:text-md my-1 transform rounded bg-[var(--btn-primary)] p-2 text-sm font-semibold text-[var(--btn-ternary)] transition-colors duration-200 hover:bg-[--btn-ternary] hover:text-[--primary] md:p-2 lg:px-4 lg:text-lg">
                         See Demo
                       </button>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
