@@ -1,6 +1,7 @@
 "use client";
-import Portfolio from "@/components/Portfolio";
+import Portfolio from "@/components/portfolio/Portfolio";
 import { motion } from "framer-motion";
+import { GoArrowDown } from "react-icons/go";
 
 const PortfolioPage = () => {
   return (
@@ -10,8 +11,11 @@ const PortfolioPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="flex h-[calc(100vh-6rem)] w-screen items-center justify-center text-center text-8xl">
-        My Works
+      <div className="flex h-[calc(100vh-6rem)] w-screen flex-col items-center justify-center text-center text-6xl md:text-8xl">
+        <h1 className="">My Works</h1>
+        <p>
+          <GoArrowDown className="mt-20 text-[var(--btn-primary)]" />
+        </p>
       </div>
       <Portfolio />
     </motion.div>

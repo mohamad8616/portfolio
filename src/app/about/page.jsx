@@ -1,5 +1,5 @@
 "use client";
-import Brain from "@/components/brain";
+import Brain from "@/components/UI/brain";
 import { motion, useInView, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
@@ -31,11 +31,10 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* CONTAINER */}
-      <div className="relative h-screen w-full overflow-hidden">
-        {" "}
+      <div className="relative h-screen w-full">
         {/* Changed container */}
         <div
-          className="h-full w-full gap-10 overflow-y-auto lg:flex"
+          className="no-scrollbar h-full w-full gap-10 overflow-y-scroll lg:flex"
           ref={containerRef}
         >
           {/* TEXT CONTAINER */}

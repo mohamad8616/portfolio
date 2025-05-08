@@ -1,10 +1,8 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import NavLinks from "./NavLinks";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import NavLinks from "./NavLinks";
 const hambergerMenuLine = "block h-1 w-full bg-black rounded";
 
 const links = [
@@ -78,19 +76,41 @@ function Navbar() {
       </div>
       <div className="justify-center md:hidden lg:flex xl:w-1/3"></div>
       <div className="hidden w-1/3 gap-4 md:flex">
-        <Link href="www.github.com/mohamad8616">
+        <a
+          href="https://www.github.com/mohamad8616"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {/* <Image width={24} height={24} src="/github.png" alt="GitHub" /> */}
-          <FaGithub className="text-[#415A77]" width={30} height={30} />
-        </Link>
+          <FaGithub
+            className="text-[#415A77] transition-all duration-300 hover:text-[#E0E1DD]"
+            width={30}
+            height={30}
+          />
+        </a>
 
-        <Link href="www.linkedin.com/in/mohamad-abdolahi">
+        <a href="https://www.linkedin.com/in/mohamad-abdolahi" target="_blank">
           {/* <Image width={24} height={24} src="/linkedin.png" alt="LinkedIn" /> */}
-          <FaLinkedin className="text-blue-600" width={30} height={30} />
-        </Link>
-        <Link href="instagram.com">
+          <FaLinkedin
+            className="text-blue-600 transition-all duration-300 hover:text-[#E0E1DD]"
+            width={30}
+            height={30}
+          />
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Follow me on Instagram for more updates and behind-the-scenes content"
+          aria-label="Visit my Instagram profile"
+        >
           {/* <Image width={24} height={24} src="/instagram.png" alt="Instagram" /> */}
-          <FaInstagram className="text-red-600" width={30} height={30} />
-        </Link>
+          <FaInstagram
+            className="text-red-600 transition-all duration-300 hover:text-[#E0E1DD]"
+            width={30}
+            height={30}
+          />
+        </a>
       </div>
       {/* RESPOSIVE MENU */}
       <div className="md:hidden">
