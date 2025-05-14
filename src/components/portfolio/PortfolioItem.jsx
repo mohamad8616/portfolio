@@ -68,7 +68,7 @@ export default function PortfolioItem({ item }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 opacity-0 transition-all duration-500 group-hover:opacity-100">
                   <div className="flex flex-wrap gap-2">
-                    {item.technologies.map((tech, index) => (
+                    {/* {item.technologies.map((tech, index) => (
                       <span
                         key={index}
                         className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
@@ -76,7 +76,7 @@ export default function PortfolioItem({ item }) {
                         {getTechIcon(tech)}
                         <span>{tech}</span>
                       </span>
-                    ))}
+                    ))} */}
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function PortfolioItem({ item }) {
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-sm text-gray-400">
                   <span className="h-1 w-1 rounded-full bg-gray-400"></span>
-                  Created at: {format(item.createdAt, "MMMM d, yyyy")}
+                  {/* Created at: {format(item.createdAt, "MMMM d, yyyy")} */}
                 </div>
                 <p className="text-base leading-relaxed text-gray-100 dark:text-gray-300 lg:text-lg">
                   {item.desc}
@@ -181,11 +181,11 @@ export default function PortfolioItem({ item }) {
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
-                  Created at: {format(item.createdAt, "MMMM d, yyyy")}
+                  {/* Created at: {format(item.createdAt, "MMMM d, yyyy")} */}
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {item.technologies.map((tech, index) => (
+                  {/* {item.technologies.map((tech, index) => (
                     <span
                       key={index}
                       className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
@@ -193,7 +193,7 @@ export default function PortfolioItem({ item }) {
                       {getTechIcon(tech)}
                       <span className="text-gray-200">{tech}</span>
                     </span>
-                  ))}
+                  ))} */}
                 </div>
 
                 <p className="text-base leading-relaxed text-gray-300 lg:text-lg">
