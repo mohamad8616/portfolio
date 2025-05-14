@@ -1,12 +1,11 @@
 "use client";
-
-import Portfolio from "@/components/portfolio/Portfolio";
 import { motion } from "framer-motion";
-
+import Portfolio from "@/components/portfolio/Portfolio";
 import Hero from "@/components/Hero";
 import WhatIOffer from "@/components/WhatIOffer";
+// import Home from "@/components/Home";
 
-const Homepage = () => {
+export default function Page() {
   return (
     <motion.div
       initial={{ y: "-200vh" }}
@@ -19,6 +18,4 @@ const Homepage = () => {
       <Portfolio />
     </motion.div>
   );
-};
-
-export default Homepage;
+}
