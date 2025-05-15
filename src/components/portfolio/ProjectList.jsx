@@ -1,8 +1,9 @@
 "use client";
-import { items } from "@/utility/data";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import PortfolioItem from "./PortfolioItem";
 import { useEffect, useRef, useState } from "react";
+import { items } from "@/utility/data";
 
 export default function ProjectList() {
   const ref = useRef();
@@ -24,6 +25,7 @@ export default function ProjectList() {
           throw new Error("Failed to fetch projects");
         }
         setProjects(data);
+        console.log(data);
       } catch (err) {
         console.error("Error fetching projects:", err);
         setError(err.message);
@@ -46,9 +48,9 @@ export default function ProjectList() {
   if (!projects.length) {
     return <div>No projects found.</div>;
   }
-
+  console.log(items);
   return (
-    <div className="relative mt-20 h-[200vh]" ref={ref}>
+    <div className="relative mt-20 h-[700vh]" ref={ref}>
       <div className="sticky top-0 flex h-screen w-full items-center gap-2 overflow-hidden">
         <motion.div style={{ x }} className="flex" id="portfolio">
           {projects.map((project) => (

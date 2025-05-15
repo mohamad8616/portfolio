@@ -66,7 +66,7 @@ export default function FormEdit({ project, setIsOpen }) {
           Image URL
         </label>
         <input
-          type="url"
+          type="text"
           id="img"
           name="img"
           value={formData.img}

@@ -68,7 +68,7 @@ export default function PortfolioItem({ item }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 opacity-0 transition-all duration-500 group-hover:opacity-100">
                   <div className="flex flex-wrap gap-2">
-                    {/* {item.technologies.map((tech, index) => (
+                    {item.technologies.split(",").map((tech, index) => (
                       <span
                         key={index}
                         className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
@@ -76,7 +76,7 @@ export default function PortfolioItem({ item }) {
                         {getTechIcon(tech)}
                         <span>{tech}</span>
                       </span>
-                    ))} */}
+                    ))}
                   </div>
                 </div>
               </div>
@@ -86,6 +86,7 @@ export default function PortfolioItem({ item }) {
                 <div className="flex items-center gap-2 text-sm text-gray-400">
                   <span className="h-1 w-1 rounded-full bg-gray-400"></span>
                   {/* Created at: {format(item.createdAt, "MMMM d, yyyy")} */}
+                  {item.createdAt}
                 </div>
                 <p className="text-base leading-relaxed text-gray-100 dark:text-gray-300 lg:text-lg">
                   {item.desc}
@@ -120,12 +121,7 @@ export default function PortfolioItem({ item }) {
                 </a>
               </div>
             </div>
-            {/* <button
-              onClick={handleModalOpen}
-              className="flex w-full items-center justify-center overflow-hidden rounded-lg bg-white/10 py-3 text-center text-sm font-semibold backdrop-blur-sm transition-all duration-300 hover:bg-white/20 lg:hidden"
-            >
-              <span className="relative z-10">View Project Details</span>
-            </button> */}
+
             <button
               onClick={handleModalOpen}
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 sm:py-0.5 md:hidden"
@@ -185,7 +181,7 @@ export default function PortfolioItem({ item }) {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {/* {item.technologies.map((tech, index) => (
+                  {item.technologies.split(",").map((tech, index) => (
                     <span
                       key={index}
                       className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
@@ -193,7 +189,7 @@ export default function PortfolioItem({ item }) {
                       {getTechIcon(tech)}
                       <span className="text-gray-200">{tech}</span>
                     </span>
-                  ))} */}
+                  ))}
                 </div>
 
                 <p className="text-base leading-relaxed text-gray-300 lg:text-lg">

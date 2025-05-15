@@ -8,14 +8,8 @@ export const items = [
     img: "/casablanca-hotel.webp",
     createdAt: new Date(2024, 12, 1),
     github: "https://github.com/mohamad8616/casablanca-hotel",
-    technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "TypeScript",
-      "React",
-      "Supabase",
-      "Framer Motion",
-    ],
+    technologies:
+      "Next.js, Tailwind CSS, TypeScript, React, Supabase, Framer Motion",
   },
   {
     id: 2,
@@ -26,7 +20,7 @@ export const items = [
     img: "/html-css1.jpg",
     createdAt: new Date(2022, 1, 1),
     github: "https://github.com/mohamad8616/html-css-restaurant",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    technologies: "HTML, CSS, JavaScript",
   },
   {
     id: 3,
@@ -35,14 +29,8 @@ export const items = [
     desc: "A portfolio website built with Next.js, Tailwind CSS, and Framer Motion. It features a modern and responsive design, a portfolio section with a gallery of projects, and a contact form for customers to get in touch with the developer.",
     link: "https://coffeedev.ir",
     img: "/coffeedev-v2.jpg",
-    createdAt: new Date(2025, 4, 6),
+    createdAt: new Date(2025, 4, 14),
     github: "https://github.com/mohamad8616/portfolio",
-    technologies: [
-      "JavaScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Framer motions",
-    ],
+    technologies: "JavaScript, React, Next.js, Tailwind CSS, Framer motions",
   },
 ];
