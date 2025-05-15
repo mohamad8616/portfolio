@@ -50,7 +50,7 @@ export default function ProjectList() {
   }
   console.log(items);
   return (
-    <div className="relative mt-20 h-[700vh]" ref={ref}>
+    <div className="relative mt-20 h-[300vh]" ref={ref}>
       <div className="sticky top-0 flex h-screen w-full items-center gap-2 overflow-hidden">
         <motion.div style={{ x }} className="flex" id="portfolio">
           {projects.map((project) => (
