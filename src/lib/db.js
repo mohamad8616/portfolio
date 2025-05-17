@@ -27,7 +27,8 @@ db.exec(`CREATE TABLE IF NOT EXISTS projects (
   link TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   technologies TEXT,
-  github TEXT
+  github TEXT,
+  createdAt INTEGER
 )`);
 
 export const insertSmst = db.prepare(`
@@ -39,28 +40,17 @@ export const insertSmst = db.prepare(`
 const insertProjects = () => {
   items.forEach((item) => {
     try {
-      // Validate technologies array
-      if (!Array.isArray(item.technologies)) {
-        console.error(
-          `Invalid technologies format for project ${item.id}:`,
-          item.technologies,
-        );
-        return;
-      }
-
-      // Convert technologies array to a comma-separated string
-      const technologiesString = item.technologies.join(", ");
-
       insertSmst.run(
         item.id,
         item.title,
         item.img,
         item.desc,
         item.link,
-        item.createdAt.getTime(),
-        technologiesString,
+        item.createdAt,
+        item.technologies,
         item.github,
       );
+      console.log(`Project ${item.id} inserted successfully`);
     } catch (error) {
       console.error(`Error inserting project ${item.id}:`, error);
     }

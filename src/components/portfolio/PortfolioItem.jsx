@@ -34,7 +34,7 @@ const getTechIcon = (tech) => {
 };
 export default function PortfolioItem({ item }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  console.log(item);
   const handleModalOpen = () => {
     setIsModalOpen(true);
   };
@@ -48,16 +48,16 @@ export default function PortfolioItem({ item }) {
     >
       <div className="flex h-4/5 w-11/12 items-center justify-center gap-2 px-4 text-white">
         <div className="relative mt-16 flex h-full w-full flex-col items-center justify-between gap-y-5 overflow-hidden py-20 sm:w-3/4 md:w-10/12">
-          <h1 className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl lg:text-5xl">
+          <h1 className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl">
             {item.title}
           </h1>
           <motion.div
             initial={{ opacity: 0, y: 70 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex h-full flex-col place-content-start items-center justify-around gap-8 p-6 lg:flex-row"
+            className="flex h-full flex-col place-content-start items-center justify-around gap-8 p-6 md:flex-row"
           >
-            <div className="group relative w-full lg:w-1/2">
+            <div className="group relative w-full md:w-1/2">
               <div className="group-hover:shadow-[var(--btn-primary)]/20 overflow-hidden rounded-xl shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
                 <img
                   onClick={handleModalOpen}
@@ -81,14 +81,16 @@ export default function PortfolioItem({ item }) {
                 </div>
               </div>
             </div>
-            <div className="hidden w-full space-y-8 lg:block lg:w-1/2">
+            <div className="hidden w-full space-y-8 md:block md:w-1/2">
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-sm text-gray-400">
                   <span className="h-1 w-1 rounded-full bg-gray-400"></span>
-                  {/* Created at: {format(item.createdAt, "MMMM d, yyyy")} */}
-                  {item.createdAt}
+                  Created at:{" "}
+                  {item.created_at && !isNaN(new Date(item.created_at))
+                    ? format(new Date(item.created_at), "MMMM d, yyyy")
+                    : "Date not available"}
                 </div>
-                <p className="text-base leading-relaxed text-gray-100 dark:text-gray-300 lg:text-lg">
+                <p className="text-sm leading-relaxed text-gray-100 dark:text-gray-300 lg:text-lg">
                   {item.desc}
                 </p>
               </div>
@@ -96,7 +98,7 @@ export default function PortfolioItem({ item }) {
                 {!item.link.includes("coffeedev.ir") && (
                   <a
                     href={item.link}
-                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-[var(--btn-primary)] px-6 py-3 text-[var(--btn-ternary)] transition-all duration-300 hover:bg-[var(--btn-ternary)] hover:text-[var(--primary)]"
+                    className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-[var(--btn-primary)] px-4 py-1.5 text-[var(--btn-ternary)] transition-all duration-300 hover:bg-[var(--btn-ternary)] hover:text-[var(--primary)] lg:px-6 lg:py-3"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -109,7 +111,7 @@ export default function PortfolioItem({ item }) {
                 )}
                 <a
                   href={item.github}
-                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-[var(--btn-primary)] px-6 py-3 text-[var(--btn-ternary)] transition-all duration-300 hover:bg-[var(--btn-ternary)] hover:text-[var(--primary)]"
+                  className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-[var(--btn-primary)] px-4 py-1.5 text-[var(--btn-ternary)] transition-all duration-300 hover:bg-[var(--btn-ternary)] hover:text-[var(--primary)] lg:px-6 lg:py-3"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -177,7 +179,10 @@ export default function PortfolioItem({ item }) {
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
-                  {/* Created at: {format(item.createdAt, "MMMM d, yyyy")} */}
+                  Created at:{" "}
+                  {item.created_at && !isNaN(new Date(item.created_at))
+                    ? format(new Date(item.created_at), "MM/dd/yyyy")
+                    : "Date not available"}
                 </div>
 
                 <div className="flex flex-wrap gap-2">
@@ -196,7 +201,7 @@ export default function PortfolioItem({ item }) {
                   {item.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex flex-wrap gap-4 pt-4 text-base md:text-lg">
                   {!item.link.includes("coffeedev.ir") && (
                     <a
                       href={item.link}

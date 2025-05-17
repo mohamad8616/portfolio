@@ -60,6 +60,21 @@ export default function FormEdit({ project, setIsOpen }) {
         />
       </div>
 
+      {/* createdAt */}
+      {/* <div>
+        <label htmlFor="createdAt" className={labelStyle}>
+          Created At
+        </label>
+        <input
+          type="date"
+          id="createdAt"
+          name="createdAt"
+          value={formData.createdAt}
+          onChange={handleChange}
+          className={inputStyle}
+          required
+        />
+      </div> */}
       {/* Image URL */}
       <div>
         <label htmlFor="img" className={labelStyle}>

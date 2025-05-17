@@ -3,6 +3,7 @@ import { createProject } from "@/lib/db-action";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+const labelStyle = "mb-2 block text-sm font-medium text-gray-700";
 const inputStyles =
   "w-full rounded-lg border-2 border-gray-200 bg-white px-4 py-3 text-gray-700 placeholder-gray-400 transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200";
 
@@ -11,27 +12,24 @@ export default async function AdminPage() {
   if (!session.user) redirect("/");
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <main className="h-auto min-h-screen py-12">
       <div className="mx-auto max-w-2xl px-4">
         <div className="mb-8 text-center">
-          <h1 className="mb-2 text-3xl font-bold text-gray-800">
+          <h1 className="mb-2 text-3xl font-bold text-gray-200">
             Add New Project
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-200">
             Fill in the details to add a new project to your portfolio
           </p>
         </div>
 
         <form
           action={createProject}
-          className="space-y-6 rounded-xl bg-white p-2 shadow-lg md:p-8"
+          className="space-y-6 rounded-xl p-2 shadow-lg md:p-8"
         >
           {/* Title Input */}
           <div>
-            <label
-              htmlFor="title"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="title" className={labelStyle}>
               Project Title
             </label>
             <input
@@ -46,10 +44,7 @@ export default async function AdminPage() {
 
           {/* Description Input */}
           <div>
-            <label
-              htmlFor="desc"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="desc" className={labelStyle}>
               Description
             </label>
             <textarea
@@ -64,10 +59,7 @@ export default async function AdminPage() {
 
           {/* Image URL Input */}
           <div>
-            <label
-              htmlFor="img"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="img" className={labelStyle}>
               Image URL
             </label>
             <div className="relative">
@@ -87,10 +79,7 @@ export default async function AdminPage() {
 
           {/* Live Demo Link */}
           <div>
-            <label
-              htmlFor="link"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="link" className={labelStyle}>
               Live Demo URL
             </label>
             <input
@@ -104,10 +93,7 @@ export default async function AdminPage() {
 
           {/* GitHub Link */}
           <div>
-            <label
-              htmlFor="github"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="github" className={labelStyle}>
               GitHub Repository
             </label>
             <input
@@ -121,10 +107,7 @@ export default async function AdminPage() {
 
           {/* Technologies Input */}
           <div>
-            <label
-              htmlFor="technologies"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="technologies" className={labelStyle}>
               Technologies
             </label>
             <input
