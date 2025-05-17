@@ -3,9 +3,9 @@ import { createProject } from "@/lib/db-action";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-const labelStyle = "mb-2 block text-sm font-medium text-gray-700";
+const labelStyle = "mb-2 block text-sm font-medium text-gray-500";
 const inputStyles =
-  "w-full rounded-lg border-2 border-gray-200 bg-white px-4 py-3 text-gray-700 placeholder-gray-400 transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200";
+  "w-full rounded-lg border-2 border-gray-200 bg-gray-200 px-4 py-3 text-gray-700 placeholder-gray-400 transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200";
 
 export default async function AdminPage() {
   const session = await verifyAuth();
