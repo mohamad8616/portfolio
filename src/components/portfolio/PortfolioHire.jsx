@@ -18,10 +18,10 @@ export default function PortfolioHire() {
               d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
             />
           </defs>
-          <text fill="#dedede">
+          <text fill="#625959">
             <textPath
               xlinkHref="#circlePath"
-              className="text-[var(--btn-ternary]) text-xl"
+              className="dark:text-[var(--btn-ternary]) text-xl text-stone-700"
             >
               Front-end Developer and UI Designer
             </textPath>

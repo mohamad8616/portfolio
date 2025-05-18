@@ -34,3 +34,19 @@ export const items = [
     technologies: "JavaScript, React, Next.js, Tailwind CSS, Framer motions",
   },
 ];
+export const experiences = [
+  {
+    jobTitle: "Junior Frontend Developer - remote",
+    jobDesc:
+      "Developed and maintained a fully responsive admin dashboard using React and TanStack Query, and styled user interfaces using Tailwind CSS for performance and clarity, collaborated with remote teams to implement new features and optimize performance",
+    jobDate: "2023 - 2024",
+    jobCompany: "Tec-Rayaneh, Urmia",
+  },
+  {
+    jobTitle: "Junior React Developer",
+    jobDesc:
+      "Designed and developed modular, reusable UI components for internal business tools, implemented animations and transitions using Framer Motion for an enhanced UX",
+    jobDate: "2022 - 2023",
+    jobCompany: "Tec-Rayaneh, Urmia",
+  },
+];

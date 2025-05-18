@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Portfolio from "@/components/portfolio/Portfolio";
 import Hero from "@/components/Hero";
 import WhatIOffer from "@/components/WhatIOffer";
-// import Home from "@/components/Home";
 
 export default function Page() {
   return (
