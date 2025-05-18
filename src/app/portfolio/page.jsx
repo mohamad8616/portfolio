@@ -12,7 +12,7 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="flex h-[calc(100vh-6rem)] w-screen flex-col items-center justify-center text-center text-6xl md:text-8xl">
-        <h1 className="">My Works</h1>
+        <h1 className="text-stone-700 dark:text-stone-300">My Works</h1>
         <p>
           <GoArrowDown className="mt-20 text-[var(--btn-primary)]" />
         </p>

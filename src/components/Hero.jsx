@@ -24,7 +24,7 @@ export default function Hero() {
         </Suspense>
       </div>
       {/* TEXT CONTAINER */}
-      <div className="relative flex h-1/2 flex-col items-center justify-center gap-8 font-light md:h-full md:w-1/2">
+      <div className="relative flex h-1/2 flex-col items-center justify-center gap-8 font-light font-semibold md:h-full md:w-1/2">
         {/* TITLE */}
         <h1 className="z-20 transform text-start text-4xl font-medium text-yellow-600 md:absolute md:-top-28 md:w-[700px] md:-translate-x-20 md:text-7xl lg:-translate-x-10">
           {/* Hi, I&apos;m Mohammad. */}
@@ -58,13 +58,13 @@ export default function Hero() {
         </p>
         <div className="flex w-full gap-4">
           <Link
-            href="portfolio"
+            href="https://server17.serverha.net:2083/cpsess7009697154/download?skipencode=1&file=%2fhome%2fcoffeede%2fMohamadAbdolahiResume%20%283%29.pdf"
             className={`${heroBtnStyle} transition-[background-color, color] duration-200ms bg-[#415A77] font-semibold text-[#fff] transition duration-200 ease-in-out hover:bg-[#E0E1DD] hover:text-[#415A77]`}
           >
-            View my work
+            Download CV (resume)
           </Link>
           <Link
-            href="contact"
+            href="/contact"
             className={`${heroBtnStyle} border-none bg-[#415A77] font-semibold text-[#fff] outline-none transition duration-200 ease-in-out hover:bg-[#E0E1DD] hover:text-[#415A77]`}
           >
             Contact
