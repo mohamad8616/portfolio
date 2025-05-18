@@ -11,7 +11,7 @@ export default function Page() {
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
-      className="h-auto w-full"
+      className="h-auto w-full bg-white font-semibold text-slate-800 dark:bg-transparent"
     >
       <Hero />
       <WhatIOffer />

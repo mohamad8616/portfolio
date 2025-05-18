@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import TransitionProvider from "@/components/TransitionProvider";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,9 +13,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden bg-black`}>
-        <TransitionProvider>{children}</TransitionProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} overflow-x-hidden bg-white text-gray-900 transition-colors duration-200 dark:bg-black`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TransitionProvider>{children}</TransitionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

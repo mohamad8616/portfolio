@@ -41,30 +41,40 @@ const ContactPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="mb-20 flex h-full w-full items-center justify-center px-1 sm:px-4 md:px-12 lg:px-20 xl:px-48">
+      <div className="bg-var(--btn-ternary) mb-20 flex h-full w-full items-center justify-center px-1 dark:bg-transparent sm:px-4 md:px-12 lg:px-20 xl:px-48">
         <div className="mx-6 flex h-full w-full flex-col items-center justify-center space-y-12 py-16 text-3xl md:mx-0 md:text-5xl lg:text-6xl">
-          <h1 className="font-bold text-[var(--btn-ternary)] dark:text-gray-200">
+          <h1 className="z-0 font-bold text-slate-800 dark:text-slate-200">
             {text.split("").map((letter, index) => (
               <motion.span
                 key={index}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
+                initial={{ opacity: 0.3 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   duration: 2,
                   repeat: Infinity,
-                  delay: index * 0.2,
+                  repeatType: "reverse",
+                  delay: index * 0.1,
                 }}
                 className="inline-block"
               >
                 {letter}
               </motion.span>
             ))}
-
-            <span role="img" aria-label="Smiling face">
+            <motion.span
+              role="img"
+              aria-label="Smiling face"
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
               😊
-            </span>
+            </motion.span>
           </h1>
-
+        
           <div className="flex w-full flex-col items-stretch justify-between gap-10 lg:flex-row">
             <div className="rounded-lg bg-[var(--btn-ternary)] px-8 py-10 shadow-lg dark:bg-gray-800 lg:w-1/2">
               <h2 className="mb-6 border-b-2 border-gray-200 pb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">

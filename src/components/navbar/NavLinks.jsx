@@ -7,7 +7,7 @@ function NavLinks({ link }) {
   return (
     <Link
       href={link.href}
-      className={` ${isActive ? "hover: bg-purple-500 text-[#0D1B2A] hover:bg-purple-600" : ""} rounded p-1 transition-all duration-300 hover:bg-[#E0E1DD] hover:text-[#0D1B2A]`}
+      className={` ${isActive ? "hover: bg-slate-900 text-slate-100 hover:scale-105 dark:bg-purple-600" : ""} rounded p-1 transition-all duration-300 hover:bg-[#E0E1DD] hover:text-[#0D1B2A]`}
     >
       {link.title}
     </Link>

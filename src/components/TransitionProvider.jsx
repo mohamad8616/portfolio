@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence, easeOut, motion } from "framer-motion";
-import Navbar from "./Navbar";
+import Navbar from "./navbar/Navbar";
 import { usePathname } from "next/navigation";
 function TransitionProvider({ children }) {
   const pathName = usePathname();
@@ -8,7 +8,7 @@ function TransitionProvider({ children }) {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="mx-auto h-auto min-h-screen w-screen max-w-[1350px] bg-gradient-to-b from-[#000] to-[#0D1B2A] text-stone-100"
+        className="mx-auto h-auto min-h-screen w-screen max-w-[1350px] from-[#000] to-[#0D1B2A] text-stone-100 dark:bg-gradient-to-b"
       >
         <motion.div
           animate={{ height: "0vh" }}
