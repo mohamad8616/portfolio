@@ -1,7 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 const skilItemStyles =
-  "cursor-pointer rounded bg-[var(--btn-ternary)] p-2 text-sm text-[var(--primary)] hover:bg-white hover:text-black";
+  "cursor-pointer rounded dark:bg-[var(--btn-ternary)] p-2 text-sm dark:text-[var(--primary)] hover:bg-white hover:text-black bg-stone-800 text-stone-200 duration-200 transition-colors";
 function AboutSkills({ skillRef }) {
   const isSkillRefInView = useInView(skillRef, {
     margin: "-100px",

@@ -46,8 +46,8 @@ export default function PortfolioItem({ item }) {
       className={`flex h-screen w-screen items-center justify-center`}
       key={item.id}
     >
-      <div className="flex h-4/5 w-11/12 items-center justify-center gap-2 px-4 text-white">
-        <div className="relative mt-16 flex h-full w-full flex-col items-center justify-between gap-y-5 overflow-hidden py-20 sm:w-3/4 md:w-10/12">
+      <div className="flex h-4/5 w-11/12 items-center justify-center gap-2 bg-gradient-to-r from-sky-200 to-purple-200 px-4 text-white dark:bg-none">
+        <div className="relative mt-16 flex h-full w-full flex-col items-center justify-between gap-y-5 overflow-hidden rounded-lg py-20 sm:w-3/4 md:w-10/12">
           <h1 className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl">
             {item.title}
           </h1>
@@ -57,6 +57,7 @@ export default function PortfolioItem({ item }) {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex h-full flex-col place-content-start items-center justify-around gap-8 p-6 md:flex-row"
           >
+            {/* Image Container */}
             <div className="group relative w-full md:w-1/2">
               <div className="group-hover:shadow-[var(--btn-primary)]/20 overflow-hidden rounded-xl shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
                 <img
@@ -81,6 +82,7 @@ export default function PortfolioItem({ item }) {
                 </div>
               </div>
             </div>
+            {/* Large screen */}
             <div className="hidden w-full space-y-8 md:block md:w-1/2">
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -90,7 +92,7 @@ export default function PortfolioItem({ item }) {
                     ? format(new Date(item.created_at), "MMMM d, yyyy")
                     : "Date not available"}
                 </div>
-                <p className="text-sm leading-relaxed text-gray-100 dark:text-gray-300 lg:text-lg">
+                <p className="text-sm leading-relaxed text-stone-700 dark:text-stone-300 lg:text-lg">
                   {item.desc}
                 </p>
               </div>
@@ -134,6 +136,7 @@ export default function PortfolioItem({ item }) {
               </span>
             </button>
           </motion.div>
+          {/* Small screen */}
           <div
             className={`absolute inset-0 z-50 flex h-full w-full transform items-center justify-center bg-gradient-to-b from-black/95 to-black/80 backdrop-blur-sm transition-all duration-500 ${!isModalOpen ? "translate-y-full opacity-0" : "translate-y-0 opacity-100"} lg:hidden`}
           >
